@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="form.css">
+    <title>Form Test</title>
+</head>
+<body>
+    <div class="container">
+        <form novalidate id="form">
+            <div class="entity-type">
+                <p class="errorMsg" id="entityRadioError"></p>
+                <input type="radio" id="entityID" name="entity" value="entity"> entity
+                <input type="radio" id="characterID" name="entity" value="character"> character
+                <input type="radio" id="playerCharacterID" name="entity" value="playerCharacter"> player character
+            </div>
+
+            <div class="entity-details">
+                <label for="entityNameID">Entity Name</label></br>
+                <input required type="text" id="entityNameID" name="entityName" minlength="1" maxlength="10">
+                <p class="errorMsg" id="entityNameError"></p>
+                
+                <label for="autoID">Auto ID</label></br>
+                <input type="tel" id="autoID" name="autoIdNumber" placeholder="auto #" disabled>
+                <p></p>
+
+                <label for="numberOfEntitiesID">Number of Entities</label></br>
+                <input required type="tel" id="numOfEntitiesID" name="numOfEntities"  minlength="1" maxlength="2" max="99">
+                <p class="errorMsg" id="entityNumError"></p>
+
+                <label for="hitPointsID">Hit Points</label></br>
+                <input required type="tel" id="hitPointsID" name="hitPoints"  minlength="1" maxlength="3" max="999">
+                <p class="errorMsg" id="entityHitPointsError"></p>
+
+                <label for="intBonusID">Initiative Bonus</label></br>
+                <input required type="tel" id="intBonusID" name="intBonus"  minlength="1" maxlength="2" max="99">
+                <p class="errorMsg" id="entityIntBonusError"></p>
+             </div>
+                <input onclick="myFunction(this.form)" type="button" value="Submit">
+                <input onclick="testFunction()" type="button" value="Error">
+        </form>
+    </div>
+    <script src="form.js"></script>
+</body>
+</html>

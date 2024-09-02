@@ -13,9 +13,8 @@ body {
   background-image: url("./Images/Frame 1.png");
   background-repeat: repeat;
   background-size: auto;
-  overflow: scroll;
-  min-height: 100vh;
-  height: 100%;
+  overflow: hidden;
+  height: 100vh;
 }
 
 button {
@@ -201,7 +200,7 @@ nav .nav-button.fromLeft:after {
 }
 
 .form-wrapper {
-  position: absolute;
+  position: fixed;
   bottom: 0;
   z-index: 2;
   width: 100vw;
@@ -211,7 +210,7 @@ nav .nav-button.fromLeft:after {
   background: #fff;
   border-radius: 5px 5px 0 0;
   box-sizing: border-box;
-  display: flex;
+  display: none;
   flex-direction: column;
   align-items: center;
   box-shadow: 10px 3px 14px -10px #d0cdcd;

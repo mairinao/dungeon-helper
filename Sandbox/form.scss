@@ -1,0 +1,33 @@
+*{
+    font-family: poppins, Arial, Helvetica, sans-serif;
+}
+body{
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: lightgray;
+}
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 800px;
+    height: 800px;
+    background: darkgrey;
+}
+.errorMsg{
+    height: 1rem;
+    font-size: .7rem;
+    margin: 0;
+    padding: 0;
+}
+input:disabled {
+    opacity: 1;         /* Keeps the input fully opaque */
+    background-color: white;  /* Keeps the background white */
+    color: black;       /* Keeps the text color black */
+}

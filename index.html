@@ -13,9 +13,9 @@
             <h1 class="title">Helper</h1>
         </div>
         <nav>
-            <button id="newEntityBtn" class="nav-button fromLeft">New Entity</button>
-            <button id="initiativeRollBtn" class="nav-button fromLeft">Initiative Roll</button>
-            <button id="resetBtn" class="nav-button fromLeft">Reset</button>
+            <button onclick="openForm('formWrapper','newEntityBtn')" id="newEntityBtn" class="nav-button fromLeft">New Entity</button>
+            <button onclick="rollInitiative()" id="initiativeRollBtn" class="nav-button fromLeft">Initiative Roll</button>
+            <button onclick="openForm('resetWrapper')" id="resetBtn" class="nav-button fromLeft">Reset</button>
         </nav>
         <div class="content-cards">
             <div class="card">
@@ -205,12 +205,12 @@
                 </div>
             </div>
         </div>
-        <form id="formWrapper" class="form-wrapper">
+        <form id="formWrapper" class="form-wrapper" novalidate>
             <div class="form-title">
                 <div class="title">
                     <h2>Creating a character.</h2>
                 </div>
-                <button onclick="closeForm()" class="close-form">
+                <button formnovalidate onclick="closeForm('formWrapper','newEntityBtn')" class="close-form">
                     <div class="cross-bar"></div>
                     <div class="cross-bar"></div>
                 </button>
@@ -218,7 +218,7 @@
             <div class="entity-select-wrapper">
                 <div class="form-type-select">
                     <label id="formTypeSelect" class="form-radio-label" for="entity-check">
-                        <input onclick="javascript:formSelect()" type="radio" value="entity-check" id="entity-check" name="topic"/>
+                        <input onclick="javascript:formSelect()" type="radio" value="entity-check" id="entity-check" name="topic" required/>
                         <img style="margin-bottom: 9px;"  id="entity-icon" src="./Images/entity-small-form.png" alt="character-icon">
                         <p id="entityText" class="form-radio-text">Entity</p>
                     </label>
@@ -242,7 +242,7 @@
                     </div>
                     <div class="entity-auto-id-field input-common">
                         <label for="autoId">Auto ID</label>
-                        <input type="text" id="autoIdFieldOutput" name="autoId" required minlength="1" maxlength="5" placeholder="Auto #">
+                        <input type="text" id="autoIdFieldOutput" name="autoId" disabled minlength="1" maxlength="5" placeholder="Auto #">
                     </div>
                     <div class="entity-amount-field input-common">
                         <label for="entityAmount">Number of Entities</label>

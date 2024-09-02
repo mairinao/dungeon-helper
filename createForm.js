@@ -6,7 +6,6 @@ function formSelect(){
     formIconToggle(entity, character, pc)
     formTextToggle(entity, character, pc)
 }
-
 function formIconToggle(entity, character, pc){
     if(entity){
         document.getElementById('entity-icon').src = './Images/entity-small-form-toggle.png';
@@ -40,7 +39,6 @@ function formTextToggle(entity, character, pc){
         document.getElementById('pcText').classList.add('radio-text-select', 'pc-text-border');
     }
 }
-
 function submitForm(){
     let entityName = document.getElementById('entityNameInput').value
     let entityAmount = document.getElementById('entityAmountInput').value
@@ -54,8 +52,19 @@ function submitForm(){
     console.log(entityInitiativeBonus);
 }
 
-function closeForm(){
-    document.getElementById("formWrapper").style.display = "none";
-    document.getElementById("formWrapper").reset();
+//Open & Close Forms
+
+function closeForm(formName, y){
+    document.getElementById(formName).style.display = "none";
+    document.getElementById(formName).reset();
+
+    document.getElementById(y).style.color = "#292929";
     
+}
+function openForm(formName, y){
+    document.getElementById(formName).style.display = "flex";
+    
+    document.getElementById(formName).reset(); 
+
+    document.getElementById(y).style.color = "#e02222";
 }

@@ -28,10 +28,9 @@ body {
     background-repeat: repeat;
     background-size: auto; 
 
-    overflow: scroll;
+    overflow: hidden;
 
-    min-height: 100vh;
-    height: 100%;
+    height: 100vh;
 }
 
 button{
@@ -234,7 +233,7 @@ nav{
 }  
 
 .form-wrapper{
-    position: absolute;
+    position: fixed;
     bottom: 0;
     z-index: 2;
     width: 100vw;
@@ -244,7 +243,7 @@ nav{
     background: #fff;
     border-radius:  5px 5px 0 0;
     box-sizing: border-box;
-    display: flex;
+    display: none;
     flex-direction: column;
     align-items: center;
     box-shadow: 10px 3px 14px -10px #d0cdcd;
@@ -394,6 +393,8 @@ nav{
                     padding: 0;
                     text-align: center;
                 }
+
+
     
                 input::-webkit-outer-spin-button,
                 input::-webkit-inner-spin-button {
