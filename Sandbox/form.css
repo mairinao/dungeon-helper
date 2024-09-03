@@ -38,4 +38,14 @@ input:disabled {
   opacity: 1; /* Keeps the input fully opaque */
   background-color: white; /* Keeps the background white */
   color: black; /* Keeps the text color black */
+}
+
+.form {
+  display: none;
+  justify-content: center;
+  flex-direction: column;
+}
+
+#entityAmountItem, #hitPointsItem, #intBonusItemInput, #entityAmountItemInput, #hitPointsItemInput, #intBonusItemInput {
+  display: none;
 }/*# sourceMappingURL=form.css.map */

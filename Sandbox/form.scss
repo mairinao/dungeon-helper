@@ -34,3 +34,15 @@ input:disabled {
     background-color: white;  /* Keeps the background white */
     color: black;       /* Keeps the text color black */
 }
+
+.form{
+    display: none;
+    justify-content: center;
+    flex-direction: column;
+}
+
+//All fields Empty
+
+#entityAmountItem, #hitPointsItem, #intBonusItemInput, #entityAmountItemInput, #hitPointsItemInput, #intBonusItemInput{
+    display: none;
+}
