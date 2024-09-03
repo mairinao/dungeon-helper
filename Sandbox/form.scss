@@ -26,6 +26,9 @@ body{
     margin: 0;
     padding: 0;
 }
+.formInputWwrapper{
+    height: 4rem;
+}
 input:disabled {
     opacity: 1;         /* Keeps the input fully opaque */
     background-color: white;  /* Keeps the background white */

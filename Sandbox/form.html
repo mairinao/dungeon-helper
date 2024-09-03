@@ -11,34 +11,37 @@
         <form novalidate id="form">
             <div class="entity-type">
                 <p class="errorMsg" id="entityRadioError"></p>
-                <input type="radio" id="entityID" name="entity" value="entity"> entity
-                <input type="radio" id="characterID" name="entity" value="character"> character
-                <input type="radio" id="playerCharacterID" name="entity" value="playerCharacter"> player character
+                <input onclick="createTypeFunct(this.value)" type="radio" id="entityID" name="entity" value="entity" checked="checked"> entity
+                <input onclick="createTypeFunct(this.value)" type="radio" id="characterID" name="entity" value="character"> character
+                <input onclick="createTypeFunct(this.value)" type="radio" id="playerCharacterID" name="entity" value="playerCharacter"> player character
             </div>
 
             <div class="entity-details">
-                <label for="entityNameID">Entity Name</label></br>
-                <input required type="text" id="entityNameID" name="entityName" minlength="1" maxlength="10">
-                <p class="errorMsg" id="entityNameError"></p>
-                
-                <label for="autoID">Auto ID</label></br>
-                <input type="tel" id="autoID" name="autoIdNumber" placeholder="auto #" disabled>
-                <p></p>
+                <div class="formInputWwrapper">
+                <label class="entityItem" for="entityNameID">Entity Name</label></br>
+                <input class="entityItem" required type="text" id="entityNameID" name="entityName" minlength="1" maxlength="10">
+                <p class="errorMsg"></p>
+                </div>
 
-                <label for="numberOfEntitiesID">Number of Entities</label></br>
-                <input required type="tel" id="numOfEntitiesID" name="numOfEntities"  minlength="1" maxlength="2" max="99">
+                <div class="formInputWwrapper">
+                <label class="entityAmountItem" for="numberOfEntitiesID">Number of Entities</label></br>
+                <input class="entityAmountItem" required type="tel" id="numOfEntitiesID" name="numOfEntities"  minlength="1" maxlength="2" max="99">
                 <p class="errorMsg" id="entityNumError"></p>
+                </div>
 
-                <label for="hitPointsID">Hit Points</label></br>
-                <input required type="tel" id="hitPointsID" name="hitPoints"  minlength="1" maxlength="3" max="999">
+                <div class="formInputWwrapper">
+                <label  class="hitPointsItem" for="hitPointsID">Hit Points</label></br>
+                <input  class="hitPointsItem" required type="tel" id="hitPointsID" name="hitPoints"  minlength="1" maxlength="3" max="999">
                 <p class="errorMsg" id="entityHitPointsError"></p>
+                </div>
 
-                <label for="intBonusID">Initiative Bonus</label></br>
-                <input required type="tel" id="intBonusID" name="intBonus"  minlength="1" maxlength="2" max="99">
+                <div class="formInputWwrapper">
+                <label class="intBonusItem" for="intBonusID">Initiative Bonus</label></br>
+                <input class="intBonusItem" required type="tel" id="intBonusID" name="intBonus"  minlength="1" maxlength="2" max="99">
                 <p class="errorMsg" id="entityIntBonusError"></p>
+                </div>
              </div>
-                <input onclick="myFunction(this.form)" type="button" value="Submit">
-                <input onclick="testFunction()" type="button" value="Error">
+                <input onclick="submitFunction(this.form)" type="button" value="Submit">
         </form>
     </div>
     <script src="form.js"></script>
