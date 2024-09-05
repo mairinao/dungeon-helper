@@ -1,10 +1,22 @@
 //Open Form & Reset
 function loadForm(x){
-    document.getElementById("form").style.display = "flex";
+    let display = document.getElementById("form").style.display;
+
+    if(display == "flex"){
+        document.getElementById("form").style.display = "none";
+    }else{
+        document.getElementById("form").style.display = "flex";
+    }
+
+    
     document.getElementById("form").reset()
 
+    
+
+    console.log(display)
+
     loadFormType("entity");
-    clearErrors();
+    clearErrors();  
 }
 //Close Form & Reset.
 function closeForm(){
@@ -22,6 +34,8 @@ function submitFunction(formData){
     let radioCharacter = formData.querySelector('[id="characterID"]');
     let radioPlayerCharacter = formData.querySelector('[id="playerCharacterID"]');
 
+    
+
     if(radioEntity.checked == true){
         entity(form);
     }else if(radioCharacter.checked == true){
@@ -30,75 +44,65 @@ function submitFunction(formData){
         playerCharacter(form);
     }
 
-    function entity(formData){
+    function entity(){
         let entityNameVal = formData.querySelector('[name="entityName"]');
-        let entityNumVal =  formData.querySelector('[name="numOfEntities"]');
-        let entityHitpointsVal = formData.querySelector('[name="hitPoints"]');
-        let entityIntBonusVal = formData.querySelector('[name="intBonus"]');
-    
-        if((entityNameVal.value) && (entityHitpointsVal.value) && (entityNumVal.value)){
-            if(entityNameVal.value){
-                document.getElementById("entityNameError").innerHTML = '';
-            }
-            if(entityNumVal.value){
-                document.getElementById("entityNumError").innerHTML = '';
-            }
-            if(entityHitpointsVal.value){
-                document.getElementById("entityHitPointsError").innerHTML = '';
-            }
-    
-        }else{
-            if(!entityNameVal.value){
-                document.getElementById("entityNameError").textContent="Name needed, minimun 1 character.";
-            }
-            if(!entityNumVal.value){
-                document.getElementById("entityNumError").textContent="Minimun 1 Entity needed.";
-            }
-            if(!entityHitpointsVal.value){
-                document.getElementById("entityHitPointsError").textContent="Minimun 1 HP needed.";
-            }
+        let entityNumVal =  formData.querySelector('[name="entityNum"]');
+        let entityHitpointsVal = formData.querySelector('[name="entityHitPoints"]');
+        let entityIntBonusVal = formData.querySelector('[name="entityIntBonus"]');
+
+        let array = [];
+
+
+        if(entityNameVal, array){
+            checkName(entityNameVal.value, entityNameVal.name, array);
         }
+        if(entityHitpointsVal, array){
+            checkHitPoints(entityHitpointsVal.value, entityHitpointsVal.name, array);
+        }
+        if(entityNumVal, array){
+            checkNumberOfEntities(entityNumVal.value, entityNumVal.name, array);
+        }
+        if(entityIntBonusVal, array){
+            checkInitiativeBonus(entityIntBonusVal.value, entityIntBonusVal.name, array);
+        }
+
+        console.log(array);
     }
-    
-    function character(formData){
+    function character(){
         let entityNameVal = formData.querySelector('[name="entityName"]');
-        let entityHitpointsVal = formData.querySelector('[name="hitPoints"]');
-        let entityIntBonusVal = formData.querySelector('[name="intBonus"]');
-    
-        if((entityNameVal.value) && (entityHitpointsVal.value)){
-            if(entityNameVal.value){
-                document.getElementById("entityNameError").innerHTML = '';
-            }
-            if(entityHitpointsVal.value){
-                document.getElementById("entityHitPointsError").innerHTML = '';
-            }
-    
-        }else{
-            if(!entityNameVal.value){
-                document.getElementById("entityNameError").textContent="Name needed, minimun 1 character.";
-            }
-            if(!entityHitpointsVal.value){
-                document.getElementById("entityHitPointsError").textContent="Minimun 1 HP needed.";
-            }
+        let entityHitpointsVal = formData.querySelector('[name="entityHitPoints"]');
+        let entityIntBonusVal = formData.querySelector('[name="entityIntBonus"]');
+
+        let array = [];
+
+
+        if(entityNameVal, array){
+            checkName(entityNameVal.value, entityNameVal.name, array);
         }
+        if(entityHitpointsVal, array){
+            checkHitPoints(entityHitpointsVal.value, entityHitpointsVal.name, array);
+        }
+        if(entityIntBonusVal, array){
+            checkInitiativeBonus(entityIntBonusVal.value, entityIntBonusVal.name, array);
+        }
+
+        console.log(array);
     }
-    
-    function playerCharacter(formData){
+    function playerCharacter(){
         let entityNameVal = formData.querySelector('[name="entityName"]');
-    
-        if((entityNameVal.value)){
-            if(entityNameVal.value){
-                document.getElementById("entityNameError").innerHTML = '';
-            }
-    
-        }else{
-            if(!entityNameVal.value){
-                document.getElementById("entityNameError").textContent="Name needed, minimun 1 character.";
-            }
+
+        let array = [];
+
+
+        if(entityNameVal, array){
+            checkName(entityNameVal.value, entityNameVal.name, array);
         }
+
+
+        console.log(array);
     }
 }
-
+// Loads Form type.
 function loadFormType(x){
     if(x == "entity"){
         document.getElementById('entityAmountItem').style.display = "inline";
@@ -131,62 +135,57 @@ function loadFormType(x){
     clearErrors();
 }
 
+// Checking Input functions.
+function checkName(value, name, array){
+    if(value){
+        document.getElementById(`${name}Error`).innerHTML = '';
+    }else{
+        document.getElementById(`${name}Error`).textContent="Name needed, minimun 1 character.";
+        arrayPush(array, "Name Error")
+    }
+}
+
+function checkHitPoints(value, name, array){
+    if(value){
+        checkNaN(value, name, array);
+    }else{
+        document.getElementById(`${name}Error`).textContent="Minimun 1 HP needed.";
+        arrayPush(array, "HP Error")
+    }
+}
+
+function checkNumberOfEntities(value, name, array){
+    if(value){
+        checkNaN(value, name, array);
+    }else{
+        document.getElementById(`${name}Error`).textContent="Minimun 1 entity needed.";
+        arrayPush(array, "Entity Num Error")
+    }
+}
+
+function checkInitiativeBonus(value, name, array){
+    if(!value){
+        value = 0;
+    }else{
+        checkNaN(value, name, array);
+    }
+}
+// Check if value is a number.
+function checkNaN(x, name, array){
+    if(isNaN(x)){ //Not a Number
+        document.getElementById(`${name}Error`).textContent="Only numbers allowed.";
+        arrayPush(array, `${name} Num Check Error`)
+    }else{ //Number
+        document.getElementById(`${name}Error`).textContent="";
+    }
+}
+// Clear Errors when switching or opening form.
 function clearErrors(){
     document.getElementById("entityNameError").innerHTML = '';
     document.getElementById("entityNumError").innerHTML = '';
     document.getElementById("entityHitPointsError").innerHTML = '';
 }
-
-function numCheck(val){
-    if (isNaN(val)) {
-        console.log("Not a number");
-      }else{console.log("Is a number");}
-      
+// Push errors into the error array.
+function arrayPush(array, errorMsg){
+    array.push(errorMsg);
 }
-
-
-
-/*function submitFunction(formData){
-
-    let form = formData;
-
-    let entityNameVal = formData.querySelector('[name="entityName"]');
-    let entityNumVal =  formData.querySelector('[name="numOfEntities"]');
-    let entityHitpointsVal = formData.querySelector('[name="hitPoints"]');
-    let entityIntBonusVal = formData.querySelector('[name="intBonus"]');
-
-    let radioEntity = formData.querySelector('[id="entityID"]');
-    let radioCharacter = formData.querySelector('[id="characterID"]');
-    let radioPlayerCharacter = formData.querySelector('[id="playerCharacterID"]');
-
-    if((entityNameVal.value) && (entityHitpointsVal.value) && (entityNumVal.value) && (radioEntity.checked || radioCharacter.checked || radioPlayerCharacter.checked)){
-        if(entityNameVal.value){
-            document.getElementById("entityNameError").innerHTML = '';
-        }
-        if(entityNumVal.value){
-            document.getElementById("entityNumError").innerHTML = '';
-        }
-        if(entityHitpointsVal.value){
-            document.getElementById("entityHitPointsError").innerHTML = '';
-        }
-        if(radioEntity.checked || radioCharacter.checked || radioPlayerCharacter.checked){
-            document.getElementById("entityRadioError").innerHTML = '';
-        }
-
-    }else{
-        if(!entityNameVal.value){
-            document.getElementById("entityNameError").textContent="Name needed, minimun 1 character.";
-        }
-        if(!entityNumVal.value){
-            document.getElementById("entityNumError").textContent="Entity needed, minimun.";
-        }
-        if(!entityHitpointsVal.value){
-            document.getElementById("entityHitPointsError").textContent="Minimun 1 HP needed.";
-        }
-        if(!radioEntity.checked || radioCharacter.checked || radioPlayerCharacter.checked){
-            document.getElementById("entityRadioError").textContent="Entity type needed.";
-        }
-    }
-
-    //resetForm();
-}*/ 

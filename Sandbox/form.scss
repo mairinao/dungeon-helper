@@ -19,15 +19,13 @@ body{
     width: 800px;
     height: 800px;
     background: darkgrey;
+    flex-direction: column;
 }
 .errorMsg{
-    height: 1rem;
+    height: 1.3rem;
     font-size: .7rem;
     margin: 0;
     padding: 0;
-}
-.formInputWwrapper{
-    height: 4rem;
 }
 input:disabled {
     opacity: 1;         /* Keeps the input fully opaque */
@@ -35,9 +33,10 @@ input:disabled {
     color: black;       /* Keeps the text color black */
 }
 
-.form{
+form{
     display: none;
     justify-content: center;
+    flex-wrap: wrap;
     flex-direction: column;
 }
 
@@ -45,4 +44,33 @@ input:disabled {
 
 #entityAmountItem, #hitPointsItem, #intBonusItemInput, #entityAmountItemInput, #hitPointsItemInput, #intBonusItemInput{
     display: none;
+}
+
+.card-content{
+    width: 400px;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+    .card{
+        width: 100px;
+        height: 150px;
+        background: #fff;
+        margin: 5px;
+        
+        p{
+            font-size: 12px;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+    }
+    .entityCard{
+        background: lightcoral;
+    }
+    .characterCard{
+        background: lightblue;
+    }
+    .personalCharacter{
+        background: lightgreen;
+    }
 }
