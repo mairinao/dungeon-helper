@@ -7,13 +7,9 @@ function loadForm(x){
     }else{
         document.getElementById("form").style.display = "flex";
     }
-
     
     document.getElementById("form").reset()
 
-    
-
-    console.log(display)
 
     loadFormType("entity");
     clearErrors();  
@@ -50,6 +46,8 @@ function submitFunction(formData){
         let entityHitpointsVal = formData.querySelector('[name="entityHitPoints"]');
         let entityIntBonusVal = formData.querySelector('[name="entityIntBonus"]');
 
+        let num = Number(entityNumVal.value);
+
         let array = [];
 
 
@@ -66,7 +64,9 @@ function submitFunction(formData){
             checkInitiativeBonus(entityIntBonusVal.value, entityIntBonusVal.name, array);
         }
 
-        console.log(array);
+        if (array.length == 0){
+            loop(entityNameVal.value, entityHitpointsVal.value, entityIntBonusVal.value, num, "entity" )
+        }
     }
     function character(){
         let entityNameVal = formData.querySelector('[name="entityName"]');
@@ -86,7 +86,9 @@ function submitFunction(formData){
             checkInitiativeBonus(entityIntBonusVal.value, entityIntBonusVal.name, array);
         }
 
-        console.log(array);
+        if (array.length == 0){
+            loop(entityNameVal.value, entityHitpointsVal.value, entityIntBonusVal.value, 1, "character" )
+        }
     }
     function playerCharacter(){
         let entityNameVal = formData.querySelector('[name="entityName"]');
@@ -98,9 +100,11 @@ function submitFunction(formData){
             checkName(entityNameVal.value, entityNameVal.name, array);
         }
 
-
-        console.log(array);
+        if (array.length == 0){
+            loop(entityNameVal.value, 1, "playerCharacter" )
+        }
     }
+
 }
 // Loads Form type.
 function loadFormType(x){

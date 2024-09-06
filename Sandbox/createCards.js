@@ -1,22 +1,17 @@
-function createCards(nameVal, initiativeBonusVal, hitpointsVal, numEntitiesVal){
-    let name = nameVal;
-    let initiative = initiativeBonusVal;
-    let hitpoints = hitpointsVal;
-    let numEntities = numEntitiesVal;
-
+function createCards(name, hitpoints, initiative, type, counterNum){
     const newDiv = document.createElement("div");
     const newTextName = document.createElement("p")
     const newTextInitiative = document.createElement("p")
     const newTextHitpoints = document.createElement("p")
-    const newTextEntityNum = document.createElement("p")
+    const newTextEntityType = document.createElement("p")
 
     //card classes
     newDiv.classList.add("card");
-    newDiv.classList.add(name);
-    newDiv.setAttribute('id', 'cardID')
+    newDiv.classList.add(type+"Card");
+    newDiv.setAttribute('id', 'cardID' + counterNum)
 
     //card name
-    const textNodeName = document.createTextNode(name);
+    const textNodeName = document.createTextNode(name + " " + counterNum);
     newTextName.appendChild(textNodeName);
     //card initiative
     const textNodeInitiative = document.createTextNode(initiative);
@@ -25,14 +20,22 @@ function createCards(nameVal, initiativeBonusVal, hitpointsVal, numEntitiesVal){
     const textNodeHitPoints = document.createTextNode(hitpoints);
     newTextHitpoints.appendChild(textNodeHitPoints);
     //card entity num
-    const textNodeEntityNum = document.createTextNode(numEntities);
-    newTextEntityNum.appendChild(textNodeEntityNum);
+    const textNodeEntityType = document.createTextNode(type);
+    newTextEntityType.appendChild(textNodeEntityType);
     
     document.getElementById("cardWrapper").appendChild(newDiv);
-    document.getElementById("cardID").appendChild(newTextName);
-    document.getElementById("cardID").appendChild(newTextInitiative);
-    document.getElementById("cardID").appendChild(newTextHitpoints);
-    document.getElementById("cardID").appendChild(newTextEntityNum);
+    document.getElementById("cardID" + counterNum).appendChild(newTextName);
+    document.getElementById("cardID" + counterNum).appendChild(newTextInitiative);
+    document.getElementById("cardID" + counterNum).appendChild(newTextHitpoints);
+    document.getElementById("cardID" + counterNum).appendChild(newTextEntityType);
 }
 
-createCards("entityCard", 3, "33/33", 7)
+
+function loop(name, hitpoints, initiative, entityNum, type){
+
+    console.log(name, hitpoints, initiative, entityNum, type);
+
+    for (let counterNum = 1; counterNum < entityNum + 1; counterNum++) {
+        createCards(name, hitpoints, initiative, type, counterNum)
+      } 
+}
