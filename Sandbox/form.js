@@ -31,7 +31,7 @@ function submitFunction(formData){
     let radioPlayerCharacter = formData.querySelector('[id="playerCharacterID"]');
 
     
-
+    //Checks radio options, then calls different form functions, passes the form data to the called function.
     if(radioEntity.checked == true){
         entity(form);
     }else if(radioCharacter.checked == true){
@@ -40,18 +40,24 @@ function submitFunction(formData){
         playerCharacter(form);
     }
 
+    //Entity function
     function entity(){
+
+        //Setting up variables to the form
         let entityNameVal = formData.querySelector('[name="entityName"]');
         let entityNumVal =  formData.querySelector('[name="entityNum"]');
         let entityHitpointsVal = formData.querySelector('[name="entityHitPoints"]');
         let entityIntBonusVal = formData.querySelector('[name="entityIntBonus"]');
 
+        //Changes entity number value to intiger.
         let num = Number(entityNumVal.value);
 
+        //Stores error messages, used for the submit action. 
         let array = [];
 
 
         if(entityNameVal, array){
+            // Value for checking, Name for error display, Array for error store.
             checkName(entityNameVal.value, entityNameVal.name, array);
         }
         if(entityHitpointsVal, array){
@@ -65,9 +71,10 @@ function submitFunction(formData){
         }
 
         if (array.length == 0){
-            loop(entityNameVal.value, entityHitpointsVal.value, entityIntBonusVal.value, num, "entity" )
+            addNumID(entityNameVal.value, entityHitpointsVal.value, entityIntBonusVal.value, num, "entity" )
         }
     }
+    //Entity Character function
     function character(){
         let entityNameVal = formData.querySelector('[name="entityName"]');
         let entityHitpointsVal = formData.querySelector('[name="entityHitPoints"]');
@@ -75,21 +82,24 @@ function submitFunction(formData){
 
         let array = [];
 
-
+        //Checks Name for empty or Duplicate
         if(entityNameVal, array){
             checkName(entityNameVal.value, entityNameVal.name, array);
         }
+        //Check Hitpoints for empty or non digits.
         if(entityHitpointsVal, array){
             checkHitPoints(entityHitpointsVal.value, entityHitpointsVal.name, array);
         }
+        //Check for non digits.
         if(entityIntBonusVal, array){
             checkInitiativeBonus(entityIntBonusVal.value, entityIntBonusVal.name, array);
         }
 
         if (array.length == 0){
-            loop(entityNameVal.value, entityHitpointsVal.value, entityIntBonusVal.value, 1, "character" )
+            createCards(entityNameVal.value, entityHitpointsVal.value, entityIntBonusVal.value, "character", 1 )
         }
     }
+    //Entity Character function
     function playerCharacter(){
         let entityNameVal = formData.querySelector('[name="entityName"]');
 
@@ -101,7 +111,7 @@ function submitFunction(formData){
         }
 
         if (array.length == 0){
-            loop(entityNameVal.value, 1, "playerCharacter" )
+            createCards(entityNameVal.value, 00, 00, "playerCharacter", 1)
         }
     }
 
@@ -141,11 +151,18 @@ function loadFormType(x){
 
 // Checking Input functions.
 function checkName(value, name, array){
-    if(value){
-        document.getElementById(`${name}Error`).innerHTML = '';
-    }else{
-        document.getElementById(`${name}Error`).textContent="Name needed, minimun 1 character.";
+
+    let duplicateCheck = checkDuplicateName(value)
+
+    if(!value){
+        
         arrayPush(array, "Name Error")
+    }else if(!duplicateCheck){
+        console.log(duplicateCheck);
+        document.getElementById(`${name}Error`).textContent="Name already in use.";
+        arrayPush(array, "Name Duplicate Error")
+    }else{
+        document.getElementById(`${name}Error`).innerHTML = '';
     }
 }
 
@@ -192,4 +209,15 @@ function clearErrors(){
 // Push errors into the error array.
 function arrayPush(array, errorMsg){
     array.push(errorMsg);
+}
+function checkDuplicateName(name){
+    let names = document.getElementsByClassName("nameP");
+
+    for(let i = 0; i < names.length; i++){
+        if(name == names[i].innerHTML){
+            console.log("duplicate");
+            return false;
+        }
+    }
+    return true;
 }
