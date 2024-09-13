@@ -33,6 +33,7 @@ function createCards(name, hitpoints, initiative, type, counterNum){
     const textNodeHitPoints = document.createTextNode(hitpoints);
     newTextHitpoints.appendChild(textNodeHitPoints);
     newTextHitpoints.classList.add("hitpoints");
+    newTextHitpoints.addEventListener("click", openHitpoints);
     //card entity num
     const textNodeEntityType = document.createTextNode(type);
     newTextEntityType.appendChild(textNodeEntityType);
@@ -71,4 +72,7 @@ function generateID(){
 
     return uniqueNumberFinal;
 }
-addNumID("soldier", 33, 2, 4, "entity");
+addNumID("soldier", 33, 2, 1, "entity");
+addNumID("General", 12, 1, 1, "entity");
+addNumID("Private", 20, 4, 1, "entity");
+addNumID("Sailor", 40, 5, 1, "entity");

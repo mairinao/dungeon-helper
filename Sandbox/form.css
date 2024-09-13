@@ -3,6 +3,7 @@
 }
 
 body {
+  position: relative;
   width: 100vw;
   height: 100vh;
   overflow: hidden;
@@ -73,4 +74,27 @@ form {
 }
 .card-content .playerCharacterCard {
   background: lightgreen;
+}
+
+.hitpointsContainer {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  width: 400px;
+  height: 400px;
+  background: lightblue;
+}
+.hitpointsContainer .hitpointsLabel {
+  display: flex;
+  flex-direction: row;
+}
+.hitpointsContainer .hitpointsLabel h4 {
+  width: 100%;
+  color: red;
+}
+.hitpointsContainer .hitpointsLabel #hitpointsCurrent {
+  text-align: right;
+}
+.hitpointsContainer .hitpointsLabel #hitpointsOriginal {
+  text-align: left;
 }/*# sourceMappingURL=form.css.map */
