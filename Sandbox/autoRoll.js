@@ -19,4 +19,4 @@ function getInitiativesWithDelay(index = 0) {
 }
 
 // Call the function to start rolling with delay
-getInitiativesWithDelay();
+// getInitiativesWithDelay();

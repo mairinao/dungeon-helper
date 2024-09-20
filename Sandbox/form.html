@@ -7,9 +7,9 @@
     <title>Form Test</title>
 </head>
 <body>
-    <div id="hitpointsContainerID" class="hitpointsContainer">
+    <form id="hitpointsContainerID" class="hitpointsContainer">
         <h1>Hitpoints</h1>
-        <h3 onclick="closeHitpoints()">Close</h3>
+        <h3 onclick="closeHitpoints(hitpointsContainerID)">Close</h3>
         <div >
             <div class="hitpointsLabel">
                 <h4 id="hitpointsCurrent"></h4>
@@ -18,11 +18,10 @@
             <input id="hitpointsInput" required type="text" id="hitpointsID" name="hitpoints" minlength="1" maxlength="3">
             <p class="errorMsg" id="hitpointsError"></p>
 
-            <input onclick="hitPoints('heal')" type="button" value="Heal">
-            <input onclick="hitPoints('damage')" type="button" value="Damage">
-
+            <input onclick="hitPoints(hitpointsInput, this.value)" type="button" value="Heal">
+            <input onclick="hitPoints(hitpointsInput, this.value)" type="button" value="Damage">
         </div>
-    </div>
+    </form>
     <div class="container">
         <nav>
             <button onclick="loadForm()" class="button">Create Form</button>

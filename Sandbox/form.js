@@ -111,7 +111,7 @@ function submitFunction(formData){
         }
 
         if (array.length == 0){
-            createCards(entityNameVal.value, 00, 00, "playerCharacter", 1)
+            createCards(entityNameVal.value, 0o0, 0o0, "playerCharacter", 1)
         }
     }
 
