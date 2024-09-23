@@ -1,0 +1,85 @@
+@font-face {
+  font-family: poppins-m;
+  src: url("./fonts/Poppins-Medium.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: poppins-sb;
+  src: url("./fonts/Poppins-SemiBold.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: poppins-b;
+  src: url("./fonts/Poppins-Bold.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+* {
+  margin: 0;
+  padding: 0;
+  font-family: helvetica;
+}
+
+button {
+  border: 0;
+  background: none;
+}
+
+form, #hitpointsContainerID {
+  display: none;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  width: 100vw;
+  min-width: 375px;
+  height: auto;
+  padding: 15px;
+  box-sizing: border-box;
+  background-image: url("./Images/background.png");
+  background-repeat: repeat;
+  background-size: auto;
+  color: #292929;
+}
+
+header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+header .title {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+header .title h1 {
+  width: 50%;
+  line-height: 0.8;
+  color: #FF0202;
+  font-family: poppins-b, Arial, Helvetica, sans-serif;
+  font-size: 2rem;
+  font-weight: 700;
+  text-align: right;
+}
+header nav {
+  width: 100%;
+  max-width: 450px;
+  margin: 28px 0;
+  box-sizing: content-box;
+  display: flex;
+  flex-direction: row;
+  flex-direction: row;
+  justify-content: space-around;
+}
+header nav .navB {
+  font-family: poppins-b, Arial, Helvetica, sans-serif;
+  font-size: 1.25rem;
+  color: #292929;
+}
+header nav .navB:hover {
+  color: #e02222;
+}/*# sourceMappingURL=form.css.map */
