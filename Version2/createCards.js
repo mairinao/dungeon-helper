@@ -6,6 +6,7 @@ function createCards(name, hitpoints, initiative, type, counterNum){
 
     //Seting up Element Types.
     const newDiv = document.createElement("div");
+    const typeIcon = document.createElement("div");
     const hpBarWrapper = document.createElement("button");
     const redBar = document.createElement("div");
     const greenBar = document.createElement("div");
@@ -15,13 +16,17 @@ function createCards(name, hitpoints, initiative, type, counterNum){
     const hpValueOriginal =  document.createElement("p");
     const nameElement = document.createElement("p");
     const spanElement = document.createElement('span');
+    const spanElementName = document.createElement('span');
     const initiativeElement = document.createElement("p");
     const initiativeElementValue = document.createElement("p");
 
     //card classes
     newDiv.classList.add("card");
     newDiv.classList.add(type+"Card");
-    newDiv.setAttribute('id', uniqueID)
+    newDiv.setAttribute('id', uniqueID);
+
+    //Card Icon
+    typeIcon.classList.add(`${type}Icon`);
 
     //initiative 
     const initiativeLabel = document.createTextNode("initiative");
@@ -37,12 +42,14 @@ function createCards(name, hitpoints, initiative, type, counterNum){
     const nameTextNode = document.createTextNode(name); //Create a text block for Name
     const idTextNode = document.createTextNode(` #${counterNum}`);  //Create a text block for ID
 
-    nameElement.appendChild(nameTextNode); //Append the text block to the p element.
+    spanElementName.appendChild(nameTextNode); //Append the text block to the p element.
     spanElement.appendChild(idTextNode); //Append the text block to the span element.
 
-    nameElement.appendChild(spanElement)
+    nameElement.appendChild(spanElementName);
+    nameElement.appendChild(spanElement);
+    nameElement.classList.add('name');
     spanElement.classList.add('hexColor'); //Add a class to the span element, name the span class hexColor.
-    nameElement.classList.add("name"); //Add a class to the p element, name the class name.
+    spanElementName.classList.add("truncate"); //Add a class to the p element, name the class name.
 
     //hitPoints Bar
     hpBarWrapper.classList.add("hpBarWrapper");
@@ -56,7 +63,7 @@ function createCards(name, hitpoints, initiative, type, counterNum){
     hpBarWrapper.addEventListener('click', () => openHitpoints(this));
 
     //hitPoints Label & Value
-    const hpTextNodelabel = document.createTextNode("HP")
+    const hpTextNodelabel = document.createTextNode("HP");
     const hpTextNodeCurrentValue = document.createTextNode(`${hitpoints}`);
     const hpTextNodeOriginalValue = document.createTextNode(`/${hitpoints}`);
     
@@ -75,6 +82,7 @@ function createCards(name, hitpoints, initiative, type, counterNum){
     hpTextWrapper.addEventListener('click', () => openHitpoints(uniqueID));
 
     document.getElementById("cardWrapper").appendChild(newDiv);
+    document.getElementById(uniqueID).appendChild(typeIcon);
     document.getElementById(uniqueID).appendChild(initiativeElement);
     document.getElementById(uniqueID).appendChild(initiativeElementValue);
     document.getElementById(uniqueID).appendChild(nameElement);
@@ -108,10 +116,3 @@ function generateID(){
 
     return uniqueNumberFinal;
 }
-
-
-addNumID("soldier", 33, 2, 3, "entity");
-addNumID("General", 12, 1, 2, "character");
-addNumID("Private", 20, 4, 1, "character");
-addNumID("Sailor", 40, 5, 1, "playerCharacter");
-addNumID("Semiramis", 40, 5, 1, "playerCharacter");

@@ -4,8 +4,10 @@ function loadForm(x){
 
     if(display == "flex"){
         document.getElementById("form").style.display = "none";
+        document.getElementById("formWrapper").style.display = "none";
     }else{
         document.getElementById("form").style.display = "flex";
+        document.getElementById("formWrapper").style.display = "flex";
     }
     
     document.getElementById("form").reset()
@@ -221,3 +223,6 @@ function checkDuplicateName(name){
     }
     return true;
 }
+
+
+loadForm();
