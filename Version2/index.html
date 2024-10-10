@@ -19,7 +19,7 @@
         </header>
         <div id="cardWrapper" class="card-content">
             <div id="formWrapper" class="form-content">
-                <form id="hitpointsContainerID" class="hitpointsContainer">
+                <form id="hitpointsContainerID" class="hitpointsContainer hitPointsForm">
                     <h1>Hitpoints</h1>
                     <h3 onclick="closeHitpoints(hitpointsContainerID)">Close</h3>
                     <div >
@@ -34,43 +34,62 @@
                         <input onclick="hitPoints(hitpointsInput, this.value)" type="button" value="Damage">
                     </div>
                 </form>
-                <form novalidate id="form" class="form">
-                    <button type="button" onclick="closeForm()" class="button">Close Button</button>
-                    <div class="entity-type">
-                        <p class="errorMsg" id="entityRadioError"></p>
-                        <input onclick="loadFormType(this.value)" type="radio" id="entityID" name="entity" value="entity" checked="checked"> entity
-                        <input onclick="loadFormType(this.value)" type="radio" id="characterID" name="entity" value="character"> character
-                        <input onclick="loadFormType(this.value)" type="radio" id="playerCharacterID" name="entity" value="playerCharacter"> player character
+                <form novalidate id="form" class="form createForm">
+                    <div class="topLayer">
+                        <p class="characterFormTitle">Creating a character.</p>
+                        <button type="button" onclick="closeForm()" class="button formCloseButton"><span class="bar"></span><span class="bar"></span></button>
                     </div>
-        
-                    <div class="entity-details">
-                        <div class="formInputWwrapper">
-                        <label id="entityNameItem" for="entityNameID">Entity Name</label></br>
-                        <input id="entityNameItemInput" required type="text" id="entityNameID" name="entityName" minlength="1" maxlength="10">
-                        <p class="errorMsg" id="entityNameError"></p>
+                    <div class="midLayer">
+                        <div class="entity-type">
+                            <p class="errorMsg" id="entityRadioError"></p>
+                            <label id="formTypeSelect" class="formTypeLabel" for="entityID">
+                                <input onclick="loadFormType(this.value)" type="radio" id="entityID" name="entity" value="entity" checked="checked">
+                                <img style="margin-bottom: 9px;"  id="entity-icon" src="./Images/icon-entity-grey-sm.png" alt="character-icon">
+                                <p class="createFormLabelText">Entity</p>
+                            </label>
+                            <label id="formTypeSelect" class="formTypeLabel" for="characterID">
+                                <input onclick="loadFormType(this.value)" type="radio" id="characterID" name="entity" value="character">
+                                <img style="margin-bottom: 9px;" id="character-icon" src="./Images/icon-char-grey-sm.png" alt="character-icon">
+                                <p class="createFormLabelText">Character</p>
+                            </label>
+                            <label id="formTypeSelect" class="formTypeLabel"  for="playerCharacterID">
+                                <input onclick="loadFormType(this.value)" type="radio" id="playerCharacterID" name="entity" value="playerCharacter">
+                                <img  style="margin-bottom: 4px;" id="playerCharacter-icon" src="./Images/icon-playergrey-sm.png" alt="character-icon">
+                                <p class="createFormLabelText">Player<br> Character</p>
+                            </label>
                         </div>
-        
-                        <div class="formInputWwrapper">
-                        <label id="entityAmountItem" for="numberOfEntitiesID">Number of Entities</label></br>
-                        <input id="entityAmountItemInput" required type="tel" id="numOfEntitiesID" name="entityNum"  minlength="1" maxlength="2" max="99">
-                        <p class="errorMsg" id="entityNumError"></p>
+            
+                        <div class="entity-details">
+                            <div class="formInputWrapper">
+                            <label id="entityNameItem" for="entityNameID">Entity Name</label></br>
+                            <input id="entityNameItemInput" required type="text" id="entityNameID" name="entityName" minlength="1" maxlength="10" style="width:98px">
+                            <p class="errorMsg" id="entityNameError"></p>
+                            </div>
+            
+                            <div class="formInputWrapper">
+                            <label id="entityAmountItem" for="numberOfEntitiesID">Number of Entities</label></br>
+                            <input id="entityAmountItemInput" required type="tel" id="numOfEntitiesID" name="entityNum"  minlength="1" maxlength="2" max="99" style="width:50px">
+                            <p class="errorMsg" id="entityNumError"></p>
+                            </div>
+            
+                            <div class="formInputWrapper">
+                            <label  id="hitPointsItem" for="hitPointsID">Hit Points</label></br>
+                            <input  id="hitPointsItemInput" required type="tel" id="hitPointsID" name="entityHitPoints"  minlength="1" maxlength="3" max="999" style="width:75px">
+                            <p class="errorMsg" id="entityHitPointsError"></p>
+                            </div>
+            
+                            <div class="formInputWrapper">
+                            <label id="intBonusItem" for="intBonusID">Initiative Bonus</label></br>
+                            <input id="intBonusItemInput" required type="tel" id="intBonusID" name="entityIntBonus"  minlength="1" maxlength="2" max="99" style="width:124px">
+                            <p class="errorMsg" id="entityIntBonusError"></p>
+                            </div>
                         </div>
-        
-                        <div class="formInputWwrapper">
-                        <label  id="hitPointsItem" for="hitPointsID">Hit Points</label></br>
-                        <input  id="hitPointsItemInput" required type="tel" id="hitPointsID" name="entityHitPoints"  minlength="1" maxlength="3" max="999">
-                        <p class="errorMsg" id="entityHitPointsError"></p>
-                        </div>
-        
-                        <div class="formInputWwrapper">
-                        <label id="intBonusItem" for="intBonusID">Initiative Bonus</label></br>
-                        <input id="intBonusItemInput" required type="tel" id="intBonusID" name="entityIntBonus"  minlength="1" maxlength="2" max="99">
-                        <p class="errorMsg" id="entityIntBonusError"></p>
-                        </div>
-                        </div>
+                    </div>
+                    <div class="botLayer">
                         <input onclick="submitFunction(this.form)" type="button" value="Submit">
+                    </div>                        
                 </form>
-                <form  novalidate id="resetContentForm" class="form">
+                <form  novalidate id="resetContentForm resetForm" class="form">
                     <h1>Reset</h1>
                     <div class="reset-container">
                         <input type="radio" id="clearAllID" name="resetForm" value="clearAll" checked="checked"> Clear All
