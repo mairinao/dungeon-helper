@@ -1,0 +1,407 @@
+$textColor : #39404D;
+$textGrey: #747474;
+$red : #FF0202;
+$hpGreen: #A0ED85;
+$hpRed: #ED8585;
+$gold: #EBC43D;
+$btnGold: #FCD964;
+$btnRed: #FF5252;
+
+@mixin flexCol{
+    display: flex;
+    flex-direction: column;
+}
+@mixin flexRow{
+    display: flex;
+    flex-direction: row;
+}
+@mixin font{
+    font-family: Arial, Helvetica, sans-serif;
+    color: $textColor;
+}
+
+body{
+    width: 100%;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+
+    background-image: url('../images/background.png');
+    background-repeat: repeat;
+    background-size: auto;
+    
+    box-sizing: content-box;
+
+    position: relative;
+}
+.app_container{
+    @include flexCol;
+    justify-content: center;
+    max-width: 1080px;
+    min-width: 340px;
+    width: 100%;
+    margin: 15px 0;
+    box-sizing: border-box;
+}
+//header
+.page_title{
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 20px;
+    margin-right: 20px;
+    img{
+        width: 45%;
+        min-width: 160px;
+        max-width: 240px;
+    }
+}
+//navigation & Forms
+.app_nav{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 35px;
+    width: 100%;
+
+    .app_nav_center_wrapper{
+        @include flexRow;
+        width: 100%;
+        max-width: 500px;
+        justify-content: space-around;
+        .app_nav_btn{
+            @include font;
+            font-size: 20px;
+            font-weight: 700;
+            padding: 10px 8px;
+            border: none;
+            background-color: transparent;
+        }
+        .app_nav_btn:hover{
+            transition: all .1s;
+            color: $red;    
+        }
+    }
+    .app_nav_forms_wrapper{
+        .app_nav_forms_reset_form{
+            display: block;
+        }
+        .app_nav_forms_create_form, .app_nav_forms_reset_form{
+            display: none;
+            position: fixed;
+            bottom: 0;
+            left: 0%;
+            width: 100%;
+            min-width: 350px;
+            max-width: 500px;
+            background-color: #fff;
+            box-shadow: 1px 0px 15px rgb(180, 180, 180);
+            z-index: 2;
+            box-sizing:border-box;
+
+            .app_nav_forms_create_form_title_wrapper, .app_nav_forms_reset_form_title_wrapper{
+                text-align: left;
+                .app_nav_forms_create_form_title_text, .app_nav_forms_reset_form_title_text {
+                    @include font;
+                    margin: 0 0 25px 0;
+                    font-size: 18px;
+                    font-weight: 700;
+                    padding-left: 20px;
+                    padding-top: 20px;
+                }
+            }
+            .app_nav_forms_create_form_type_select_wrapper{
+                @include flexRow;
+                justify-content: center;
+                margin-bottom: 35px;
+
+                input{
+                    display: none;
+                }
+                label{
+                    width: 40px;
+                    height: 32px;
+                }
+                .custom-radio{
+                    background-size: 40px 32px;
+                    background-repeat: no-repeat;
+                    background-position: center;
+                    margin: 0 30px;
+                }
+                #create_form_type_entity_radio_id + .custom-radio {
+                    background-image: url("../images/entity_icon.svg");
+                }
+                #create_form_type_character_radio_id + .custom-radio {
+                    background-image: url("../images/character_icon.svg");
+                }
+                #create_form_type_playerCharacter_radio_id + .custom-radio {
+                    background-image: url("../images/playerCharacter_icon.svg");
+                }
+                #create_form_type_entity_radio_id:checked + .custom-radio {
+                    background-image: url("../images/entity_red_icon.svg");
+                }
+                #create_form_type_character_radio_id:checked + .custom-radio {
+                    background-image: url("../images/character_red_icon.svg");
+                }
+                #create_form_type_playerCharacter_radio_id:checked + .custom-radio {
+                    background-image: url("../images/playerCharacter_red_icon.svg");
+                }
+                
+            }
+            .app_nav_forms_create_form_input_wrapper{
+                @include flexRow;
+
+                label{
+                    @include font;
+                    font-size: 14px;
+                    font-weight: 600;
+                    margin-bottom: 7px;
+                }
+                input{
+                    width: 75%;
+                    height: 32px;
+                    border: 1px solid #D6D9E1;
+                    border-radius: 5px;
+                    padding: 0 7px;
+                }
+                input:focus {
+                    outline: none;
+                }
+                .app_nav_forms_create_form_input_wrapper_col1{
+                    width: 50%;
+                    padding-left: 6%;
+                    padding-right: 6%;
+                    @include flexCol;
+                }
+                .app_nav_forms_create_form_input_wrapper_col2{
+                    width: 50%;
+                    padding-right: 6%;
+                    @include flexCol;
+                }
+                .form_input_number_of_entities_number_input_wrapper{
+                    @include flexRow;
+                    width: 100%;
+                    box-sizing: border-box;
+
+                    input{
+                        width: 50%;
+                        border-radius: 0;
+                    }
+
+                    .form_input_number_of_entities_number_input{
+                        height: 33.6px;
+                        border: 1px solid #D6D9E1;
+                        padding: 3px 10px 5px 10px;
+                        background: #fff;
+
+                        font-size: 16px;
+                    }
+                    .decrement{
+                        border-radius: 5px 0 0 5px;
+                        border-right: 0;
+                    }
+                    .increment{
+                        border-radius: 0 5px 5px 0;
+                        border-left: 0;
+                    }
+                }
+                .form_input_error_wrapper{
+                    @include font;
+                    overflow: hidden;
+                    height: 35px;
+                    padding-top: 4px;
+                    box-sizing: border-box;
+                    font-size: 14px;
+                    font-weight: 700;
+                    color: $red;
+
+                    p{
+                        display: none;
+                        margin: 0;
+                    }
+                }
+            }
+            .app_nav_forms_create_form_button_wrapper, .app_nav_forms_reset_form_button_wrapper{
+                @include flexRow;
+                margin-top: 15px;
+                    button{
+                        @include font;
+                        font-weight: 700;
+                        font-size: 22px;
+                        border: none;
+                    }
+                    .app_nav_forms_reset_form_submit_button{
+                        width: 70%;
+                        height: 60px;
+                        color: $textColor;
+                        background-color: $btnGold;
+                    }
+                    .app_nav_forms_reset_form_close_button{
+                        width: 30%;
+                        height: 60px;
+                        color: #fff;
+                        background-color: $btnRed;
+                    }
+
+            }
+        }
+    }
+}
+//content
+.app_inner_card_container{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    
+    .app_inner_card_container_center_wrapper{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        align-items: flex-start;
+        align-content: start;
+        width: 295px;
+        gap: 40px 15px;
+
+        p{
+            margin: 0;
+        }
+
+        .card{
+            @include font;
+            @include flexCol;
+            align-items: center;
+            position: relative;
+            width: 140px;
+            height: 180px;
+            border-radius: 2%;
+            background: #fff;
+
+            .card_type_icon{
+                position: relative;
+                width: 55px;
+                height: 50px;
+                top: -26px;
+                z-index: 1;
+            }
+            .card_text_initiative{
+                position: relative;
+                top: -23px;
+                color: $textGrey;
+                font-size: 20px;
+                font-weight: 600;
+            }
+            .card_text_initiative_value{
+                position: relative;
+                top: -18px;
+                color: $gold;
+                font-size: 26px;
+                font-weight: 700;
+            }
+            .card_text_name_wrapper{
+                position: relative;
+                top: -10px;
+                @include flexRow;
+                font-size: 22px;
+                font-weight: 600;
+                .card_text_namex{
+                    color: $textColor;
+                }
+                .card_text_unique_id{
+                    padding-left: 5px;
+                    color: $red;
+                }
+            }
+            .card_hitpoints_bar_wrapper{
+                position: relative;
+                top: -9px;
+                width: 116px;
+                height: 5px;
+
+                .card_hitpoints_bar_red{
+                    height: 100%;
+                    width: 100%;
+                    background-color: $hpRed;
+                }
+                .card_hitpoints_bar_green{
+                    position: relative;
+                    top: -5px;
+                    height: 100%;
+                    width: 60%;
+                    background-color: $hpGreen;
+                }
+            }
+            .card_hitpoints_wrapper{
+                @include flexRow;
+                position: relative;
+                top: 4px;
+                font-size: 24px;
+                .card_text_hitpoints_desc{
+                    color: $textGrey;
+                    margin-right: 10px;
+                    font-weight: 400;
+                }
+                .card_text_hitpoints_current_hp, .card_text_hitpoints_original_hp{
+                    font-weight: 600;
+                }
+            }
+        }
+        #character{
+            .card_text_unique_id{
+                display: none;
+            }
+        }
+        #playerCharacter{
+            .card_text_unique_id{
+                display: none;
+            }
+            .card_hitpoints_wrapper{
+                opacity: 20%;
+            }
+        }
+    }
+}
+
+//Card container media queries. 
+
+@media(min-width: 515px){
+    .app_inner_card_container{
+        .app_inner_card_container_center_wrapper{
+            width: 450px;
+        }
+    }
+}
+@media(min-width: 500px){
+    .app_nav{
+        .app_nav_forms_wrapper{
+            .app_nav_forms_create_form{
+                left: 50%;
+                transform: translate(-50%, 0%);
+            }
+            .app_nav_forms_reset_form{
+                left: 50%;
+                transform: translate(-50%, 0%);
+            }
+        }
+    }
+}
+@media(min-width: 682px){
+    .app_inner_card_container{
+        .app_inner_card_container_center_wrapper{
+            width: 605px;
+        }
+    }
+}
+@media(min-width: 850px){
+    .app_inner_card_container{
+        .app_inner_card_container_center_wrapper{
+            width: 760px;
+        }
+    }
+}
+@media(min-width: 1015px){
+    .app_inner_card_container{
+        .app_inner_card_container_center_wrapper{
+            width: 915px;
+        }
+    }
+}
