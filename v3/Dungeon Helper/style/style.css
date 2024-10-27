@@ -1,4 +1,7 @@
 body {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
   width: 100%;
   height: 100vh;
   margin: 0;
@@ -25,6 +28,7 @@ body {
 .page_title {
   display: flex;
   justify-content: flex-end;
+  margin-top: 20px;
   margin-bottom: 20px;
   margin-right: 20px;
 }
@@ -40,14 +44,14 @@ body {
   margin-bottom: 35px;
   width: 100%;
 }
-.app_nav .app_nav_center_wrapper {
+.app_nav .app_nav_wrapper_centered {
   display: flex;
   flex-direction: row;
   width: 100%;
   max-width: 500px;
   justify-content: space-around;
 }
-.app_nav .app_nav_center_wrapper .app_nav_btn {
+.app_nav .app_nav_wrapper_centered .app_nav_btn {
   font-family: Arial, Helvetica, sans-serif;
   color: #39404D;
   font-size: 20px;
@@ -56,14 +60,14 @@ body {
   border: none;
   background-color: transparent;
 }
-.app_nav .app_nav_center_wrapper .app_nav_btn:hover {
+.app_nav .app_nav_wrapper_centered .app_nav_btn:hover {
   transition: all 0.1s;
   color: #FF0202;
 }
-.app_nav .app_nav_forms_wrapper .app_nav_forms_reset_form {
+.app_nav .app_nav_form_wrapper .form_form {
   display: block;
 }
-.app_nav .app_nav_forms_wrapper .app_nav_forms_create_form, .app_nav .app_nav_forms_wrapper .app_nav_forms_reset_form {
+.app_nav .app_nav_form_wrapper .form {
   display: none;
   position: fixed;
   bottom: 0;
@@ -76,10 +80,10 @@ body {
   z-index: 2;
   box-sizing: border-box;
 }
-.app_nav .app_nav_forms_wrapper .app_nav_forms_create_form .app_nav_forms_create_form_title_wrapper, .app_nav .app_nav_forms_wrapper .app_nav_forms_create_form .app_nav_forms_reset_form_title_wrapper, .app_nav .app_nav_forms_wrapper .app_nav_forms_reset_form .app_nav_forms_create_form_title_wrapper, .app_nav .app_nav_forms_wrapper .app_nav_forms_reset_form .app_nav_forms_reset_form_title_wrapper {
+.app_nav .app_nav_form_wrapper .form .form_title_wrapper {
   text-align: left;
 }
-.app_nav .app_nav_forms_wrapper .app_nav_forms_create_form .app_nav_forms_create_form_title_wrapper .app_nav_forms_create_form_title_text, .app_nav .app_nav_forms_wrapper .app_nav_forms_create_form .app_nav_forms_create_form_title_wrapper .app_nav_forms_reset_form_title_text, .app_nav .app_nav_forms_wrapper .app_nav_forms_create_form .app_nav_forms_reset_form_title_wrapper .app_nav_forms_create_form_title_text, .app_nav .app_nav_forms_wrapper .app_nav_forms_create_form .app_nav_forms_reset_form_title_wrapper .app_nav_forms_reset_form_title_text, .app_nav .app_nav_forms_wrapper .app_nav_forms_reset_form .app_nav_forms_create_form_title_wrapper .app_nav_forms_create_form_title_text, .app_nav .app_nav_forms_wrapper .app_nav_forms_reset_form .app_nav_forms_create_form_title_wrapper .app_nav_forms_reset_form_title_text, .app_nav .app_nav_forms_wrapper .app_nav_forms_reset_form .app_nav_forms_reset_form_title_wrapper .app_nav_forms_create_form_title_text, .app_nav .app_nav_forms_wrapper .app_nav_forms_reset_form .app_nav_forms_reset_form_title_wrapper .app_nav_forms_reset_form_title_text {
+.app_nav .app_nav_form_wrapper .form .form_title_wrapper .form_title_text {
   font-family: Arial, Helvetica, sans-serif;
   color: #39404D;
   margin: 0 0 25px 0;
@@ -88,103 +92,103 @@ body {
   padding-left: 20px;
   padding-top: 20px;
 }
-.app_nav .app_nav_forms_wrapper .app_nav_forms_create_form .app_nav_forms_create_form_type_select_wrapper, .app_nav .app_nav_forms_wrapper .app_nav_forms_reset_form .app_nav_forms_create_form_type_select_wrapper {
+.app_nav .app_nav_form_wrapper .form .form_type_select_wrapper {
   display: flex;
   flex-direction: row;
   justify-content: center;
   margin-bottom: 35px;
 }
-.app_nav .app_nav_forms_wrapper .app_nav_forms_create_form .app_nav_forms_create_form_type_select_wrapper input, .app_nav .app_nav_forms_wrapper .app_nav_forms_reset_form .app_nav_forms_create_form_type_select_wrapper input {
+.app_nav .app_nav_form_wrapper .form .form_type_select_wrapper input {
   display: none;
 }
-.app_nav .app_nav_forms_wrapper .app_nav_forms_create_form .app_nav_forms_create_form_type_select_wrapper label, .app_nav .app_nav_forms_wrapper .app_nav_forms_reset_form .app_nav_forms_create_form_type_select_wrapper label {
+.app_nav .app_nav_form_wrapper .form .form_type_select_wrapper label {
   width: 40px;
   height: 32px;
 }
-.app_nav .app_nav_forms_wrapper .app_nav_forms_create_form .app_nav_forms_create_form_type_select_wrapper .custom-radio, .app_nav .app_nav_forms_wrapper .app_nav_forms_reset_form .app_nav_forms_create_form_type_select_wrapper .custom-radio {
+.app_nav .app_nav_form_wrapper .form .form_type_select_wrapper .custom-radio {
   background-size: 40px 32px;
   background-repeat: no-repeat;
   background-position: center;
   margin: 0 30px;
 }
-.app_nav .app_nav_forms_wrapper .app_nav_forms_create_form .app_nav_forms_create_form_type_select_wrapper #create_form_type_entity_radio_id + .custom-radio, .app_nav .app_nav_forms_wrapper .app_nav_forms_reset_form .app_nav_forms_create_form_type_select_wrapper #create_form_type_entity_radio_id + .custom-radio {
+.app_nav .app_nav_form_wrapper .form .form_type_select_wrapper #form_type_entity_radio_id + .custom-radio {
   background-image: url("../images/entity_icon.svg");
 }
-.app_nav .app_nav_forms_wrapper .app_nav_forms_create_form .app_nav_forms_create_form_type_select_wrapper #create_form_type_character_radio_id + .custom-radio, .app_nav .app_nav_forms_wrapper .app_nav_forms_reset_form .app_nav_forms_create_form_type_select_wrapper #create_form_type_character_radio_id + .custom-radio {
+.app_nav .app_nav_form_wrapper .form .form_type_select_wrapper #form_type_character_radio_id + .custom-radio {
   background-image: url("../images/character_icon.svg");
 }
-.app_nav .app_nav_forms_wrapper .app_nav_forms_create_form .app_nav_forms_create_form_type_select_wrapper #create_form_type_playerCharacter_radio_id + .custom-radio, .app_nav .app_nav_forms_wrapper .app_nav_forms_reset_form .app_nav_forms_create_form_type_select_wrapper #create_form_type_playerCharacter_radio_id + .custom-radio {
+.app_nav .app_nav_form_wrapper .form .form_type_select_wrapper #form_type_playerCharacter_radio_id + .custom-radio {
   background-image: url("../images/playerCharacter_icon.svg");
 }
-.app_nav .app_nav_forms_wrapper .app_nav_forms_create_form .app_nav_forms_create_form_type_select_wrapper #create_form_type_entity_radio_id:checked + .custom-radio, .app_nav .app_nav_forms_wrapper .app_nav_forms_reset_form .app_nav_forms_create_form_type_select_wrapper #create_form_type_entity_radio_id:checked + .custom-radio {
+.app_nav .app_nav_form_wrapper .form .form_type_select_wrapper #form_type_entity_radio_id:checked + .custom-radio {
   background-image: url("../images/entity_red_icon.svg");
 }
-.app_nav .app_nav_forms_wrapper .app_nav_forms_create_form .app_nav_forms_create_form_type_select_wrapper #create_form_type_character_radio_id:checked + .custom-radio, .app_nav .app_nav_forms_wrapper .app_nav_forms_reset_form .app_nav_forms_create_form_type_select_wrapper #create_form_type_character_radio_id:checked + .custom-radio {
+.app_nav .app_nav_form_wrapper .form .form_type_select_wrapper #form_type_character_radio_id:checked + .custom-radio {
   background-image: url("../images/character_red_icon.svg");
 }
-.app_nav .app_nav_forms_wrapper .app_nav_forms_create_form .app_nav_forms_create_form_type_select_wrapper #create_form_type_playerCharacter_radio_id:checked + .custom-radio, .app_nav .app_nav_forms_wrapper .app_nav_forms_reset_form .app_nav_forms_create_form_type_select_wrapper #create_form_type_playerCharacter_radio_id:checked + .custom-radio {
+.app_nav .app_nav_form_wrapper .form .form_type_select_wrapper #form_type_playerCharacter_radio_id:checked + .custom-radio {
   background-image: url("../images/playerCharacter_red_icon.svg");
 }
-.app_nav .app_nav_forms_wrapper .app_nav_forms_create_form .app_nav_forms_create_form_input_wrapper, .app_nav .app_nav_forms_wrapper .app_nav_forms_reset_form .app_nav_forms_create_form_input_wrapper {
+.app_nav .app_nav_form_wrapper .form .form_input_wrapper {
   display: flex;
   flex-direction: row;
 }
-.app_nav .app_nav_forms_wrapper .app_nav_forms_create_form .app_nav_forms_create_form_input_wrapper label, .app_nav .app_nav_forms_wrapper .app_nav_forms_reset_form .app_nav_forms_create_form_input_wrapper label {
+.app_nav .app_nav_form_wrapper .form .form_input_wrapper label {
   font-family: Arial, Helvetica, sans-serif;
   color: #39404D;
   font-size: 14px;
   font-weight: 600;
   margin-bottom: 7px;
 }
-.app_nav .app_nav_forms_wrapper .app_nav_forms_create_form .app_nav_forms_create_form_input_wrapper input, .app_nav .app_nav_forms_wrapper .app_nav_forms_reset_form .app_nav_forms_create_form_input_wrapper input {
+.app_nav .app_nav_form_wrapper .form .form_input_wrapper input {
   width: 75%;
   height: 32px;
   border: 1px solid #D6D9E1;
   border-radius: 5px;
   padding: 0 7px;
 }
-.app_nav .app_nav_forms_wrapper .app_nav_forms_create_form .app_nav_forms_create_form_input_wrapper input:focus, .app_nav .app_nav_forms_wrapper .app_nav_forms_reset_form .app_nav_forms_create_form_input_wrapper input:focus {
+.app_nav .app_nav_form_wrapper .form .form_input_wrapper input:focus {
   outline: none;
 }
-.app_nav .app_nav_forms_wrapper .app_nav_forms_create_form .app_nav_forms_create_form_input_wrapper .app_nav_forms_create_form_input_wrapper_col1, .app_nav .app_nav_forms_wrapper .app_nav_forms_reset_form .app_nav_forms_create_form_input_wrapper .app_nav_forms_create_form_input_wrapper_col1 {
+.app_nav .app_nav_form_wrapper .form .form_input_wrapper .form_input_wrapper_col1 {
   width: 50%;
   padding-left: 6%;
   padding-right: 6%;
   display: flex;
   flex-direction: column;
 }
-.app_nav .app_nav_forms_wrapper .app_nav_forms_create_form .app_nav_forms_create_form_input_wrapper .app_nav_forms_create_form_input_wrapper_col2, .app_nav .app_nav_forms_wrapper .app_nav_forms_reset_form .app_nav_forms_create_form_input_wrapper .app_nav_forms_create_form_input_wrapper_col2 {
+.app_nav .app_nav_form_wrapper .form .form_input_wrapper .form_input_wrapper_col2 {
   width: 50%;
   padding-right: 6%;
   display: flex;
   flex-direction: column;
 }
-.app_nav .app_nav_forms_wrapper .app_nav_forms_create_form .app_nav_forms_create_form_input_wrapper .form_input_number_of_entities_number_input_wrapper, .app_nav .app_nav_forms_wrapper .app_nav_forms_reset_form .app_nav_forms_create_form_input_wrapper .form_input_number_of_entities_number_input_wrapper {
+.app_nav .app_nav_form_wrapper .form .form_input_wrapper .form_input_number_of_entities_number_input_wrapper {
   display: flex;
   flex-direction: row;
   width: 100%;
   box-sizing: border-box;
 }
-.app_nav .app_nav_forms_wrapper .app_nav_forms_create_form .app_nav_forms_create_form_input_wrapper .form_input_number_of_entities_number_input_wrapper input, .app_nav .app_nav_forms_wrapper .app_nav_forms_reset_form .app_nav_forms_create_form_input_wrapper .form_input_number_of_entities_number_input_wrapper input {
+.app_nav .app_nav_form_wrapper .form .form_input_wrapper .form_input_number_of_entities_number_input_wrapper input {
   width: 50%;
   border-radius: 0;
 }
-.app_nav .app_nav_forms_wrapper .app_nav_forms_create_form .app_nav_forms_create_form_input_wrapper .form_input_number_of_entities_number_input_wrapper .form_input_number_of_entities_number_input, .app_nav .app_nav_forms_wrapper .app_nav_forms_reset_form .app_nav_forms_create_form_input_wrapper .form_input_number_of_entities_number_input_wrapper .form_input_number_of_entities_number_input {
+.app_nav .app_nav_form_wrapper .form .form_input_wrapper .form_input_number_of_entities_number_input_wrapper .form_input_number_of_entities_number_input {
   height: 33.6px;
   border: 1px solid #D6D9E1;
   padding: 3px 10px 5px 10px;
   background: #fff;
   font-size: 16px;
 }
-.app_nav .app_nav_forms_wrapper .app_nav_forms_create_form .app_nav_forms_create_form_input_wrapper .form_input_number_of_entities_number_input_wrapper .decrement, .app_nav .app_nav_forms_wrapper .app_nav_forms_reset_form .app_nav_forms_create_form_input_wrapper .form_input_number_of_entities_number_input_wrapper .decrement {
+.app_nav .app_nav_form_wrapper .form .form_input_wrapper .form_input_number_of_entities_number_input_wrapper .decrement {
   border-radius: 5px 0 0 5px;
   border-right: 0;
 }
-.app_nav .app_nav_forms_wrapper .app_nav_forms_create_form .app_nav_forms_create_form_input_wrapper .form_input_number_of_entities_number_input_wrapper .increment, .app_nav .app_nav_forms_wrapper .app_nav_forms_reset_form .app_nav_forms_create_form_input_wrapper .form_input_number_of_entities_number_input_wrapper .increment {
+.app_nav .app_nav_form_wrapper .form .form_input_wrapper .form_input_number_of_entities_number_input_wrapper .increment {
   border-radius: 0 5px 5px 0;
   border-left: 0;
 }
-.app_nav .app_nav_forms_wrapper .app_nav_forms_create_form .app_nav_forms_create_form_input_wrapper .form_input_error_wrapper, .app_nav .app_nav_forms_wrapper .app_nav_forms_reset_form .app_nav_forms_create_form_input_wrapper .form_input_error_wrapper {
+.app_nav .app_nav_form_wrapper .form .form_input_wrapper .form_input_error_wrapper {
   font-family: Arial, Helvetica, sans-serif;
   color: #39404D;
   overflow: hidden;
@@ -195,33 +199,52 @@ body {
   font-weight: 700;
   color: #FF0202;
 }
-.app_nav .app_nav_forms_wrapper .app_nav_forms_create_form .app_nav_forms_create_form_input_wrapper .form_input_error_wrapper p, .app_nav .app_nav_forms_wrapper .app_nav_forms_reset_form .app_nav_forms_create_form_input_wrapper .form_input_error_wrapper p {
+.app_nav .app_nav_form_wrapper .form .form_input_wrapper .form_input_error_wrapper p {
   display: none;
   margin: 0;
 }
-.app_nav .app_nav_forms_wrapper .app_nav_forms_create_form .app_nav_forms_create_form_button_wrapper, .app_nav .app_nav_forms_wrapper .app_nav_forms_create_form .app_nav_forms_reset_form_button_wrapper, .app_nav .app_nav_forms_wrapper .app_nav_forms_reset_form .app_nav_forms_create_form_button_wrapper, .app_nav .app_nav_forms_wrapper .app_nav_forms_reset_form .app_nav_forms_reset_form_button_wrapper {
+.app_nav .app_nav_form_wrapper .form .form_input_wrapper_col {
+  display: flex;
+  flex-direction: column;
+}
+.app_nav .app_nav_form_wrapper .form .form_button_wrapper {
   display: flex;
   flex-direction: row;
   margin-top: 15px;
 }
-.app_nav .app_nav_forms_wrapper .app_nav_forms_create_form .app_nav_forms_create_form_button_wrapper button, .app_nav .app_nav_forms_wrapper .app_nav_forms_create_form .app_nav_forms_reset_form_button_wrapper button, .app_nav .app_nav_forms_wrapper .app_nav_forms_reset_form .app_nav_forms_create_form_button_wrapper button, .app_nav .app_nav_forms_wrapper .app_nav_forms_reset_form .app_nav_forms_reset_form_button_wrapper button {
+.app_nav .app_nav_form_wrapper .form .form_button_wrapper button {
   font-family: Arial, Helvetica, sans-serif;
   color: #39404D;
   font-weight: 700;
   font-size: 22px;
   border: none;
 }
-.app_nav .app_nav_forms_wrapper .app_nav_forms_create_form .app_nav_forms_create_form_button_wrapper .app_nav_forms_reset_form_submit_button, .app_nav .app_nav_forms_wrapper .app_nav_forms_create_form .app_nav_forms_reset_form_button_wrapper .app_nav_forms_reset_form_submit_button, .app_nav .app_nav_forms_wrapper .app_nav_forms_reset_form .app_nav_forms_create_form_button_wrapper .app_nav_forms_reset_form_submit_button, .app_nav .app_nav_forms_wrapper .app_nav_forms_reset_form .app_nav_forms_reset_form_button_wrapper .app_nav_forms_reset_form_submit_button {
+.app_nav .app_nav_form_wrapper .form .form_button_wrapper .form_submit_button {
   width: 70%;
   height: 60px;
   color: #39404D;
   background-color: #FCD964;
 }
-.app_nav .app_nav_forms_wrapper .app_nav_forms_create_form .app_nav_forms_create_form_button_wrapper .app_nav_forms_reset_form_close_button, .app_nav .app_nav_forms_wrapper .app_nav_forms_create_form .app_nav_forms_reset_form_button_wrapper .app_nav_forms_reset_form_close_button, .app_nav .app_nav_forms_wrapper .app_nav_forms_reset_form .app_nav_forms_create_form_button_wrapper .app_nav_forms_reset_form_close_button, .app_nav .app_nav_forms_wrapper .app_nav_forms_reset_form .app_nav_forms_reset_form_button_wrapper .app_nav_forms_reset_form_close_button {
+.app_nav .app_nav_form_wrapper .form .form_button_wrapper .form_close_button {
   width: 30%;
   height: 60px;
   color: #fff;
   background-color: #FF5252;
+}
+.app_nav .app_nav_form_wrapper .form .drop_menu_wrapper {
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 31px;
+}
+.app_nav .app_nav_form_wrapper .form .drop_menu_wrapper select {
+  width: 75%;
+  height: 32px;
+  border: 1px solid #D6D9E1;
+  border-radius: 5px;
+  padding: 0 7px;
+}
+.app_nav .app_nav_form_wrapper .form .form_input_wrapper_col {
+  padding-left: 30px;
 }
 
 .app_inner_card_container {
@@ -339,11 +362,11 @@ body {
   }
 }
 @media (min-width: 500px) {
-  .app_nav .app_nav_forms_wrapper .app_nav_forms_create_form {
+  .app_nav .app_nav_form_wrapper .form {
     left: 50%;
     transform: translate(-50%, 0%);
   }
-  .app_nav .app_nav_forms_wrapper .app_nav_forms_reset_form {
+  .app_nav .app_nav_form_wrapper .form_form {
     left: 50%;
     transform: translate(-50%, 0%);
   }

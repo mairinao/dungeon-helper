@@ -12,29 +12,29 @@
             <img src="./images/app_title.svg" alt="app title">
         </div>
         <div class="app_nav">
-            <div class="app_nav_center_wrapper">
-                <button class="app_nav_btn" id="form_create_toggle_button" onclick="createForm_toggle(event)">New Entity</button>
+            <div class="app_nav_wrapper_centered">
+                <button class="app_nav_btn nav_create_btn" onclick="formToggle(event)">New Entity</button>
                 <button class="app_nav_btn">Initiative Roll</button>
-                <button class="app_nav_btn" id="form_reset_toggle_button" onclick="resetForm_toggle(event)">Reset</button>
+                <button class="app_nav_btn nav_reset_btn" onclick="formToggle(event)">Reset</button>
             </div>
-            <div class="app_nav_forms_wrapper">
-                <form class="app_nav_forms_create_form" id="app_nav_forms_create_form_id">
-                    <div class="app_nav_forms_create_form_title_wrapper">
-                        <p class="app_nav_forms_create_form_title_text">Creating a character</p>
+            <div class="app_nav_form_wrapper">
+                <form class="form create_form" id="create_form_id">
+                    <div class="form_title_wrapper">
+                        <p class="form_title_text">Creating a character</p>
                     </div>
-                    <div class="app_nav_forms_create_form_type_select_wrapper">
-                        <input type="radio" id="create_form_type_entity_radio_id" class="create_form_type_entity_radio" name="type-select" value="entity">
-                        <label for="create_form_type_entity_radio_id" class="custom-radio entity_radio_css" onclick="createForm_entityTypeSelection('entity')" checked>
+                    <div class="form_type_select_wrapper">
+                        <input type="radio" id="form_type_entity_radio_id" class="form_type_entity_radio" name="type-select" value="entity">
+                        <label for="form_type_entity_radio_id" class="custom-radio entity_radio_css" onclick="createForm_entityTypeSelection('entity')" checked>
                         </label>
-                        <input type="radio" id="create_form_type_character_radio_id" class="create_form_type_character_radio" name="type-select" value="character">
-                        <label for="create_form_type_character_radio_id" class="custom-radio character_radio_css" onclick="createForm_entityTypeSelection('character')">
+                        <input type="radio" id="form_type_character_radio_id" class="form_type_character_radio" name="type-select" value="character">
+                        <label for="form_type_character_radio_id" class="custom-radio character_radio_css" onclick="createForm_entityTypeSelection('character')">
                         </label>
-                        <input type="radio" id="create_form_type_playerCharacter_radio_id" class="create_form_type_playerCharacter_radio" name="type-select" value="playerCharacter">
-                        <label for="create_form_type_playerCharacter_radio_id" class="custom-radio playerCharacter_radio_css" onclick="createForm_entityTypeSelection('playerCharacter')">
+                        <input type="radio" id="form_type_playerCharacter_radio_id" class="form_type_playerCharacter_radio" name="type-select" value="playerCharacter">
+                        <label for="form_type_playerCharacter_radio_id" class="custom-radio playerCharacter_radio_css" onclick="createForm_entityTypeSelection('playerCharacter')">
                         </label>
                     </div>
-                    <div class="app_nav_forms_create_form_input_wrapper">
-                        <div class="app_nav_forms_create_form_input_wrapper_col1">
+                    <div class="form_input_wrapper">
+                        <div class="form_input_wrapper_col1">
                             <label for="form_input_name label">Name</label><br>
                             <input type="text" id="form_input_name" name="name"><br>
                             <div class="form_input_error_wrapper">
@@ -46,11 +46,11 @@
                                 <p>Name already in use</p>
                             </div>
                         </div>
-                        <div class="app_nav_forms_create_form_input_wrapper_col2">
+                        <div class="form_input_wrapper_col2">
                             <label for="form_input_number_of_entities label" class="entities_display">Number of Entities</label><br>
                             <div class="form_input_number_of_entities_number_input_wrapper entities_display">
                                 <button class="form_input_number_of_entities_number_input decrement" onclick="inputEntitiesMaths(event)">-</button>
-                                <input type="text" name="entities-quantity" id="form_input_number_of_entities_number_input"><br>
+                                <input type="text" name="entities-quantity" id="form_input_number_of_entities_number_input" value="1"><br>
                                 <button class="form_input_number_of_entities_number_input increment" onclick="inputEntitiesMaths(event)">+</button>
                             </div>
                             <div class="form_input_error_wrapper entities_display">
@@ -67,37 +67,39 @@
                             </div>
                         </div>
                     </div>
-                    <div class="app_nav_forms_create_form_button_wrapper">
-                        <button class="app_nav_forms_create_form_submit_button" id="form_create_submit_button" onclick="createForm_submit(event)">Create</button>
-                        <button class="app_nav_forms_create_form_close_button" id="form_create_close_button" onclick="createForm_toggle(event)">Close</button>
+                    <div class="form_button_wrapper">
+                        <button class="form_submit_button" id="form_submit_button" onclick="createForm_submit(event)">Create</button>
+                        <button class="form_close_button form_create_close_btn" id="form_close_button" onclick="formToggle(event)">Close</button>
                     </div>
                 </form>
-                <form class="app_nav_forms_reset_form" id="app_nav_forms_reset_form_id">
-                    <div class="app_nav_forms_reset_form_title_wrapper">
-                        <p class="app_nav_forms_reset_form_title_text" onclick="resetForm_toggle(event)">Creating a character</p>
+                <form class="form reset_form" id="reset_form_id">
+                    <div class="form_title_wrapper">
+                        <p class="form_title_text" onclick="resetForm_toggle(event)">Reset</p>
                         
                     </div>
-                    <div class="app_nav_forms_reset_form_input_wrapper">
-                        <div class="reset_form_clear_type_wrapper">
+                    <div class="form_input_wrapper form_input_wrapper_col">
+                        <div class="drop_menu_wrapper">
                             <label for="clearType">Clear Type</label>
                             <select name="clearType" id="clearType">
-                              <option value="clearAll">Clear All Entities</option>
-                              <option value="clearEntities">Clear common Entities</option>
-                              <option value="clearCharacters">Clear NPC Characters</option>
-                              <option value="clearPlayerCharacters">Clear Player Characters</option>
+                                <option value="none" selected   >-- --</option>
+                                <option value="clearAll">Clear All Entities</option>
+                                <option value="clearEntities">Clear common Entities</option>
+                                <option value="clearCharacters">Clear NPC Characters</option>
+                                <option value="clearPlayerCharacters">Clear Player Characters</option>
                             </select> 
                         </div>
-                        <div class="reset_form_clear_type_wrapper">
+                        <div class="drop_menu_wrapper">
                             <label for="clearType">Clear Dead or Marked</label>
                             <select name="clearSpecific" id="clearSpecific">
-                              <option value="clearDead">Clear Dead</option>
-                              <option value="clearMarked">Clear Mark</option>
+                                <option value="none" selected>-- --</option>
+                                <option value="clearDead">Clear Dead</option>
+                                <option value="clearMarked">Clear Mark</option>
                             </select> 
                         </div>
                     </div>
-                    <div class="app_nav_forms_reset_form_button_wrapper">
-                        <button class="app_nav_forms_reset_form_submit_button" id="form_reset_submit_button" onclick="createForm_submit(event)">Create</button>
-                        <button class="app_nav_forms_reset_form_close_button" id="form_reset_close_button" onclick="createForm_toggle(event)">Close</button>
+                    <div class="form_button_wrapper">
+                        <button class="form_submit_button" id="form_submit_button" onclick="createForm_submit(event)">Reset</button>
+                        <button class="form_close_button form_reset_close_btn" id="form_close_button" onclick="formToggle(event)">Close</button>
                     </div>
                 </form>
             </div>
@@ -106,8 +108,10 @@
             <div class="app_inner_card_container_center_wrapper" id="app_inner_card_container_center_wrapper_id"></div>
         </div>
     </div>
+    <script src="./javascript/createForm.js"></script>
+    <script src="./javascript/form_toggle_reset.js"></script>
+    <script src="./javascript/toybox.js"></script>
+    
     <script src="./javascript/createForm_cardCreator.js"></script>
-    <script src="./javascript/createForm_visuals_data.js"></script>
-    <script src="./javascript/resetForm.js"></script>
 </body>
 </html>
