@@ -220,7 +220,7 @@ body{
                     color: $red;
 
                     p{
-                        display: none;
+                        display: block;
                         margin: 0;
                     }
                 }
@@ -300,6 +300,11 @@ body{
 
             .card_type_icon{
                 position: relative;
+                background-size: 55px 50px;
+                background-repeat: no-repeat;
+                background-position: center;
+                background-color: transparent;
+                border: none;
                 width: 55px;
                 height: 50px;
                 top: -26px;

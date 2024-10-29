@@ -24,13 +24,13 @@
                     </div>
                     <div class="form_type_select_wrapper">
                         <input type="radio" id="form_type_entity_radio_id" class="form_type_entity_radio" name="type-select" value="entity">
-                        <label for="form_type_entity_radio_id" class="custom-radio entity_radio_css" onclick="createForm_entityTypeSelection('entity')" checked>
+                        <label for="form_type_entity_radio_id" class="custom-radio entity_radio_css" onclick="createForm_entityTypeSelection('entity', event)" checked>
                         </label>
                         <input type="radio" id="form_type_character_radio_id" class="form_type_character_radio" name="type-select" value="character">
-                        <label for="form_type_character_radio_id" class="custom-radio character_radio_css" onclick="createForm_entityTypeSelection('character')">
+                        <label for="form_type_character_radio_id" class="custom-radio character_radio_css" onclick="createForm_entityTypeSelection('character', event)">
                         </label>
                         <input type="radio" id="form_type_playerCharacter_radio_id" class="form_type_playerCharacter_radio" name="type-select" value="playerCharacter">
-                        <label for="form_type_playerCharacter_radio_id" class="custom-radio playerCharacter_radio_css" onclick="createForm_entityTypeSelection('playerCharacter')">
+                        <label for="form_type_playerCharacter_radio_id" class="custom-radio playerCharacter_radio_css" onclick="createForm_entityTypeSelection('playerCharacter', event)">
                         </label>
                     </div>
                     <div class="form_input_wrapper">
@@ -38,12 +38,12 @@
                             <label for="form_input_name label">Name</label><br>
                             <input type="text" id="form_input_name" name="name"><br>
                             <div class="form_input_error_wrapper">
-                                <p>Name already in use</p>
+                                <p id="name_error_text_id"></p>
                             </div>
                             <label for="form_input_hitpoints label" class="hitpoints_display">Hitpoints</label><br>
                             <input type="text" id="form_input_hitpoints" class="hitpoints_display" name="hitpoints"><br>
                             <div class="form_input_error_wrapper hitpoints_display">
-                                <p>Name already in use</p>
+                                <p id="hitpoints_error_text_id"></p>
                             </div>
                         </div>
                         <div class="form_input_wrapper_col2">
@@ -54,16 +54,13 @@
                                 <button class="form_input_number_of_entities_number_input increment" onclick="inputEntitiesMaths(event)">+</button>
                             </div>
                             <div class="form_input_error_wrapper entities_display">
-                                <p>Name already in use</p>
+                                <p id="entitiesQuantity_error_text_id"></p>
                             </div>
                             <label for="form_input_initiative_bonus label" class="initiative_display">Initiative Bonus</label><br>
                             <div class="form_input_number_of_entities_number_input_wrapper initiative_display">
                                 <button class="form_input_number_of_entities_number_input decrement" onclick="inputIniativeMaths(event)">-</button>
                                 <input type="text" name="initiative-bonus" id="form_input_number_of_initiative_number_input"><br>
                                 <button class="form_input_number_of_entities_number_input increment" onclick="inputIniativeMaths(event)">+</button>
-                            </div>
-                            <div class="form_input_error_wrapper initiative_display">
-                                <p>Name already in use</p>
                             </div>
                         </div>
                     </div>
@@ -108,10 +105,10 @@
             <div class="app_inner_card_container_center_wrapper" id="app_inner_card_container_center_wrapper_id"></div>
         </div>
     </div>
-    <script src="./javascript/createForm.js"></script>
+    <script src="./javascript/form_create_check_submit.js"></script>
+    <script src="./javascript/form_create_dynamic_builder.js"></script>
+    <script src="./javascript/form_create_entities_intiative_logic.js"></script>
     <script src="./javascript/form_toggle_reset.js"></script>
     <script src="./javascript/toybox.js"></script>
-    
-    <script src="./javascript/createForm_cardCreator.js"></script>
 </body>
 </html>
