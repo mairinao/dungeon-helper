@@ -3,10 +3,9 @@ body {
   justify-content: center;
   align-items: flex-start;
   width: 100%;
-  height: 100vh;
+  height: 100%;
   margin: 0;
   padding: 0;
-  overflow: hidden;
   background-image: url("../images/background.png");
   background-repeat: repeat;
   background-size: auto;
@@ -249,8 +248,15 @@ body {
 
 .app_inner_card_container {
   width: 100%;
+  height: 67vh;
   display: flex;
   justify-content: center;
+  position: fixed;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 25%;
+  overflow-y: scroll;
+  box-sizing: content-box;
 }
 .app_inner_card_container .app_inner_card_container_center_wrapper {
   display: flex;
@@ -261,6 +267,8 @@ body {
   align-content: start;
   width: 295px;
   gap: 40px 15px;
+  position: fixed;
+  top: 10%;
 }
 .app_inner_card_container .app_inner_card_container_center_wrapper p {
   margin: 0;

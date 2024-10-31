@@ -10,18 +10,19 @@ function createForm_submit(event){
     const name = data['name'];
     const hitpoints = data['hitpoints'];
     const entitiesQuantity = data['entities-quantity'];
+    const initiative = data['initiative-bonus'];
 
-    errorCheck(typeSelect, name, hitpoints, entitiesQuantity);
+    errorCheck(typeSelect, name, hitpoints, entitiesQuantity, initiative);
 }
 // Input Check
-function errorCheck(typeSelect, name, hitpoints, entitiesQuantity){
+function errorCheck(typeSelect, name, hitpoints, entitiesQuantity, initiative){
     let nameVar = nameCheck(name);
     let hitpointsVar = hitpointsCheck(hitpoints);
     let entitiesQuantityVar = entitiesQuantityCheck(entitiesQuantity);
 
     if(typeSelect == 'entity'){
         if( nameVar && hitpointsVar && entitiesQuantityVar){
-            console.log("Submit Complete")
+            cardBuilderOrder(typeSelect, initiative, name, hitpoints, entitiesQuantity);
         }
         else{
             if (!nameVar) console.log("Name check failed.");
@@ -32,7 +33,7 @@ function errorCheck(typeSelect, name, hitpoints, entitiesQuantity){
         }
     }else if(typeSelect == 'character'){
         if( nameVar && hitpointsVar){
-            console.log("Submit Complete")
+            cardBuilderOrder(typeSelect, initiative, name, hitpoints);
         }
         else{
             if (!nameVar) console.log("Name check failed.");
@@ -42,7 +43,7 @@ function errorCheck(typeSelect, name, hitpoints, entitiesQuantity){
         }
     }else if(typeSelect == 'playerCharacter'){
         if(nameVar){
-            console.log("Submit Complete")
+            cardBuilderOrder(typeSelect, initiative, name, hitpoints);
         }
         else{
             if (!nameVar) console.log("Name check failed.");

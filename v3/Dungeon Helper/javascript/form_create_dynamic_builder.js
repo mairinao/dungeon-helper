@@ -28,19 +28,24 @@ function randomNumberGenerator() {
 }
 //Send data & random number to card builder.
 function cardBuilderOrder(iconName, initiativeValue, nameValue, hitpoints, quantity){
+    
     if(iconName == "entity"){
         for(let i = 1; i <= quantity; i++ ){
             cardBuilder(iconName, initiativeValue, nameValue, i, hitpoints);
         }
     }else if(iconName == "character"){
         cardBuilder(iconName, initiativeValue, nameValue, 0, hitpoints);
-    }else{
+    }else if(iconName == "playerCharacter"){
         cardBuilder(iconName, 0, nameValue, 0, 0);
+    }else{
+        console.log("Error!");
     }
+    
+    
 }
 //Create and DOM the HTML. 
 function cardBuilder(iconName, initiativeValue, nameValue, numberId, hitpoints){
-
+    const container = document.getElementById("app_inner_card_container_center_wrapper_id");
     const randomNumber = randomNumberGenerator();
 
     const newCardDiv = document.createElement("div");
@@ -59,12 +64,14 @@ function cardBuilder(iconName, initiativeValue, nameValue, numberId, hitpoints){
     const cardHitpointsOriginalHp =  document.createElement("p");
 
 
-    newCardDiv.className = "card";
-    newCardDiv.id = iconName;
+    newCardDiv.className = "card" + " " + iconName;
+    //newCardDiv.className = iconName;
     newCardDiv.dataset.cardId = randomNumber;
 
     cardIconBtn.className = "card_type_icon";
     cardIconBtn.style.backgroundImage = `url('./images/${iconName}_icon.svg')`;
+    cardIconBtn.dataset.cardIconId = randomNumber;
+    cardIconBtn.id = `button_icon_${iconName}`;
 
     cardInitiativeLabel.className = "card_text_initiative";
     cardInitiativeLabel.textContent = ("initiative");
@@ -93,7 +100,7 @@ function cardBuilder(iconName, initiativeValue, nameValue, numberId, hitpoints){
     cardHitpointsOriginalHp.textContent = `/${hitpoints}`;
 
 
-    const container = document.getElementById("app_inner_card_container_center_wrapper_id");
+    
     container.appendChild(newCardDiv);
     newCardDiv.appendChild(cardIconBtn);
     newCardDiv.appendChild(cardInitiativeLabel);
@@ -108,10 +115,11 @@ function cardBuilder(iconName, initiativeValue, nameValue, numberId, hitpoints){
     cardHitpointsWrapper.appendChild(cardHitpointsDesc);
     cardHitpointsWrapper.appendChild(cardHitpointsCurrentHp);
     cardHitpointsWrapper.appendChild(cardHitpointsOriginalHp);
-
 }
 
-cardBuilderOrder("entity", 4, "Soldier", 4, 4);
+cardBuilderOrder("entity", 4, "Soldier", 4, 3);
 cardBuilderOrder("character", 4, "Natai", 0, 71);
+cardBuilderOrder("character", 4, "Lolcat", 0, 71)
 cardBuilderOrder("playerCharacter", 4, "Dorito", 0, 144);
+cardBuilderOrder("playerCharacter", 4, "Mario   ", 0, 144);
 
