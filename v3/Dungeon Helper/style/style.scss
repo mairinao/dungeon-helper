@@ -1,5 +1,6 @@
 $textColor : #39404D;
 $textGrey: #747474;
+$lightGrey: #E1E1E1;
 $red : #FF0202;
 $hpGreen: #A0ED85;
 $hpRed: #ED8585;
@@ -265,6 +266,58 @@ body{
                 padding-left: 30px;
             }
         }
+        .edit_card{
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+
+            @include flexCol;
+            height: 270px;
+            width: 375px;
+
+            .entity_nav_wrapper{
+                @include flexRow;
+
+                .edit_title_wrapper{
+                    @include flexRow;
+                    @include font;
+                    width: 74%;
+                    padding: 0 20px;
+                    text-align: center;
+                    align-items: center;
+                    box-sizing: border-box;
+                    
+                    .edit_title_name{
+                        margin: 0 3px 0 0;
+                        font-size: 24px;
+                        font-weight: 700;
+                        color: $textColor;
+                    }
+                    .edit_title_entity_num{
+                        margin: 0 20px 0 0;
+                        font-size: 24px;
+                        font-weight: 700;
+                        color: $red;
+                    }
+                    .edit_title_type{
+                        margin: 0 15px 0 0;
+                        font-size: 16px;
+                        font-weight: 700;
+                        margin: 0 0 -5px 0;
+                        color: $textGrey;
+                    }
+                }
+
+                .edit_button{
+                    width: 50px;
+                    height: 50px;
+                    background-color: $lightGrey;
+                    color: $textColor;
+                    border: none;
+                }
+            }
+        }
     }
 }
 //content
@@ -415,6 +468,9 @@ body{
             .form_form{
                 left: 50%;
                 transform: translate(-50%, 0%);
+            }
+            .edit_card{
+                top: 33%;
             }
         }
     }

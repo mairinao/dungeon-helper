@@ -245,6 +245,57 @@ body {
 .app_nav .app_nav_form_wrapper .form .form_input_wrapper_col {
   padding-left: 30px;
 }
+.app_nav .app_nav_form_wrapper .edit_card {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  height: 270px;
+  width: 375px;
+}
+.app_nav .app_nav_form_wrapper .edit_card .entity_nav_wrapper {
+  display: flex;
+  flex-direction: row;
+}
+.app_nav .app_nav_form_wrapper .edit_card .entity_nav_wrapper .edit_title_wrapper {
+  display: flex;
+  flex-direction: row;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #39404D;
+  width: 74%;
+  padding: 0 20px;
+  text-align: center;
+  align-items: center;
+  box-sizing: border-box;
+}
+.app_nav .app_nav_form_wrapper .edit_card .entity_nav_wrapper .edit_title_wrapper .edit_title_name {
+  margin: 0 3px 0 0;
+  font-size: 24px;
+  font-weight: 700;
+  color: #39404D;
+}
+.app_nav .app_nav_form_wrapper .edit_card .entity_nav_wrapper .edit_title_wrapper .edit_title_entity_num {
+  margin: 0 20px 0 0;
+  font-size: 24px;
+  font-weight: 700;
+  color: #FF0202;
+}
+.app_nav .app_nav_form_wrapper .edit_card .entity_nav_wrapper .edit_title_wrapper .edit_title_type {
+  margin: 0 15px 0 0;
+  font-size: 16px;
+  font-weight: 700;
+  margin: 0 0 -5px 0;
+  color: #747474;
+}
+.app_nav .app_nav_form_wrapper .edit_card .entity_nav_wrapper .edit_button {
+  width: 50px;
+  height: 50px;
+  background-color: #E1E1E1;
+  color: #39404D;
+  border: none;
+}
 
 .app_inner_card_container {
   width: 100%;
@@ -382,6 +433,9 @@ body {
   .app_nav .app_nav_form_wrapper .form_form {
     left: 50%;
     transform: translate(-50%, 0%);
+  }
+  .app_nav .app_nav_form_wrapper .edit_card {
+    top: 33%;
   }
 }
 @media (min-width: 682px) {
