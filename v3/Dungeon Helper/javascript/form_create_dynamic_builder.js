@@ -67,6 +67,8 @@ function cardBuilder(iconName, initiativeValue, nameValue, numberId, hitpoints){
     newCardDiv.className = "card" + " " + iconName;
     //newCardDiv.className = iconName;
     newCardDiv.dataset.cardId = randomNumber;
+    newCardDiv.dataset.cardType = iconName;
+    newCardDiv.dataset.original = initiativeValue;
 
     cardIconBtn.className = "card_type_icon";
     cardIconBtn.style.backgroundImage = `url('./images/${iconName}_icon.svg')`;
@@ -95,6 +97,7 @@ function cardBuilder(iconName, initiativeValue, nameValue, numberId, hitpoints){
     cardHitpointsDesc.className = ("card_text_hitpoints_desc");
     cardHitpointsDesc.textContent = ("HP");
     cardHitpointsCurrentHp.className = ("card_text_hitpoints_current_hp");
+    cardHitpointsCurrentHp.id = "card_hitpoints_current_id";
     cardHitpointsCurrentHp.textContent = (hitpoints);
     cardHitpointsOriginalHp.className = ("card_text_hitpoints_original_hp");
     cardHitpointsOriginalHp.textContent = `/${hitpoints}`;

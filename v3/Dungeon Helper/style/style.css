@@ -55,7 +55,7 @@ body {
   color: #39404D;
   font-size: 20px;
   font-weight: 700;
-  padding: 10px 8px;
+  padding: 10px 5px;
   border: none;
   background-color: transparent;
 }
@@ -246,20 +246,20 @@ body {
   padding-left: 30px;
 }
 .app_nav .app_nav_form_wrapper .edit_card {
+  display: none;
   position: fixed;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  display: flex;
   flex-direction: column;
-  height: 270px;
+  height: 300px;
   width: 375px;
 }
-.app_nav .app_nav_form_wrapper .edit_card .entity_nav_wrapper {
+.app_nav .app_nav_form_wrapper .edit_card .edit_nav_wrapper {
   display: flex;
   flex-direction: row;
 }
-.app_nav .app_nav_form_wrapper .edit_card .entity_nav_wrapper .edit_title_wrapper {
+.app_nav .app_nav_form_wrapper .edit_card .edit_nav_wrapper .edit_title_wrapper {
   display: flex;
   flex-direction: row;
   font-family: Arial, Helvetica, sans-serif;
@@ -270,31 +270,157 @@ body {
   align-items: center;
   box-sizing: border-box;
 }
-.app_nav .app_nav_form_wrapper .edit_card .entity_nav_wrapper .edit_title_wrapper .edit_title_name {
+.app_nav .app_nav_form_wrapper .edit_card .edit_nav_wrapper .edit_title_wrapper .edit_title_name {
   margin: 0 3px 0 0;
   font-size: 24px;
   font-weight: 700;
   color: #39404D;
 }
-.app_nav .app_nav_form_wrapper .edit_card .entity_nav_wrapper .edit_title_wrapper .edit_title_entity_num {
+.app_nav .app_nav_form_wrapper .edit_card .edit_nav_wrapper .edit_title_wrapper .edit_title_entity_num {
   margin: 0 20px 0 0;
   font-size: 24px;
   font-weight: 700;
   color: #FF0202;
 }
-.app_nav .app_nav_form_wrapper .edit_card .entity_nav_wrapper .edit_title_wrapper .edit_title_type {
+.app_nav .app_nav_form_wrapper .edit_card .edit_nav_wrapper .edit_title_wrapper .edit_title_type {
   margin: 0 15px 0 0;
   font-size: 16px;
   font-weight: 700;
   margin: 0 0 -5px 0;
   color: #747474;
 }
-.app_nav .app_nav_form_wrapper .edit_card .entity_nav_wrapper .edit_button {
+.app_nav .app_nav_form_wrapper .edit_card .edit_nav_wrapper .edit_nav_button {
   width: 50px;
   height: 50px;
   background-color: #E1E1E1;
   color: #39404D;
   border: none;
+}
+.app_nav .app_nav_form_wrapper .edit_card .edit_content_wrapper {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+.app_nav .app_nav_form_wrapper .edit_card .edit_content_wrapper .edit_content {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 80px;
+  box-sizing: border-box;
+  padding: 0 20px;
+}
+.app_nav .app_nav_form_wrapper .edit_card .edit_content_wrapper .edit_content .initiative_col {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 50%;
+}
+.app_nav .app_nav_form_wrapper .edit_card .edit_content_wrapper .edit_content .initiative_col p {
+  padding: 0;
+  margin: 0;
+}
+.app_nav .app_nav_form_wrapper .edit_card .edit_content_wrapper .edit_content .hitpoints_col {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 50%;
+}
+.app_nav .app_nav_form_wrapper .edit_card .edit_content_wrapper .edit_content .hitpoints_col p {
+  padding: 0;
+  margin: 0;
+}
+.app_nav .app_nav_form_wrapper .edit_card .edit_content_wrapper .edit_content .edit_text_title {
+  font-family: Arial, Helvetica, sans-serif;
+  color: #39404D;
+  font-weight: 700;
+  font-size: 14px;
+}
+.app_nav .app_nav_form_wrapper .edit_card .edit_content_wrapper .edit_content .edit_text_value {
+  font-family: Arial, Helvetica, sans-serif;
+  color: #39404D;
+  position: relative;
+  left: 80%;
+  top: 4px;
+  font-weight: 700;
+  font-size: 24px;
+  transform: translate(-50%);
+}
+.app_nav .app_nav_form_wrapper .edit_card .edit_content_wrapper .edit_content .edit_text_value span {
+  font-size: 15px;
+}
+.app_nav .app_nav_form_wrapper .edit_card .edit_content_wrapper .edit_content .edit_text_value span:nth-child(1) {
+  font-size: 15px;
+}
+.app_nav .app_nav_form_wrapper .edit_card .edit_content_wrapper .edit_content .edit_text_value .edit_original_hp_size {
+  font-size: 24px !important;
+  color: #39404D;
+}
+.app_nav .app_nav_form_wrapper .edit_card .edit_content_wrapper .edit_content .edit_original_hp_color {
+  color: #FF0202 !important;
+}
+.app_nav .app_nav_form_wrapper .edit_card .edit_content_wrapper .edit_content .edit_input_wrapper {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  position: relative;
+  top: 20px;
+}
+.app_nav .app_nav_form_wrapper .edit_card .edit_content_wrapper .edit_content .edit_input_wrapper input {
+  box-sizing: border-box;
+  width: 95px;
+  height: 30px;
+}
+.app_nav .app_nav_form_wrapper .edit_card .edit_content_wrapper .edit_content .edit_input_wrapper button {
+  width: 30px;
+  height: 30px;
+  border: 1px solid #747474;
+  background: #fff;
+}
+.app_nav .app_nav_form_wrapper .edit_card .edit_content_wrapper .edit_content .edit_input_wrapper button:nth-child(3) {
+  border-radius: 0px 5px 5px 0px;
+  border-left: none;
+}
+.app_nav .app_nav_form_wrapper .edit_card .edit_content_wrapper .edit_content .edit_input_wrapper button:nth-child(1) {
+  border-radius: 5px 0 0 5px;
+  border-right: none;
+}
+.app_nav .app_nav_form_wrapper .edit_card .edit_content_wrapper .edit_content .edit_error_wrapper {
+  font-family: Arial, Helvetica, sans-serif;
+  color: #39404D;
+  position: relative;
+  left: 5px;
+  top: 22px;
+  font-size: 14px;
+  font-weight: 700;
+  color: #FF0202;
+}
+.app_nav .app_nav_form_wrapper .edit_card .edit_submit_wrapper {
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  bottom: -30px;
+  width: 100%;
+  height: 60px;
+}
+.app_nav .app_nav_form_wrapper .edit_card .edit_submit_wrapper .edit_button {
+  font-family: Arial, Helvetica, sans-serif;
+  color: #39404D;
+  background-color: #EBC43D;
+  border: none;
+  width: 100%;
+  height: 100%;
+  font-size: 24px;
+  font-weight: 600;
+}
+.app_nav .app_nav_form_wrapper .edit_card .edit_submit_wrapper .edit_button:nth-child(1) {
+  background-color: #EBC43D;
+  width: 70%;
+  color: #39404D;
+}
+.app_nav .app_nav_form_wrapper .edit_card .edit_submit_wrapper .edit_button:nth-child(2) {
+  background-color: #FF5252;
+  width: 30%;
+  color: #fff;
 }
 
 .app_inner_card_container {
