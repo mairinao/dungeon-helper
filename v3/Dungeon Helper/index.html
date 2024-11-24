@@ -7,6 +7,11 @@
     <title>Dungeon Helper</title>
 </head>
 <body>
+    <button id="theButton" onclick="closeUpdateCard(event)">Button 1</button>
+    <div  id="overlayWrapper" class="overlay-wrapper">
+        <div class="overlay-grey"></div>
+        <div class="loader"></div>
+    </div>
     <div class="app_container">
         <div class="page_title">
             <img src="./images/app_title.svg" alt="app title">
@@ -51,7 +56,7 @@
                             <label for="form_input_number_of_entities label" class="entities_display">Number of Entities</label><br>
                             <div class="form_input_number_of_entities_number_input_wrapper entities_display">
                                 <button class="form_input_number_of_entities_number_input decrement" onclick="inputEntitiesMaths(event)">-</button>
-                                <input type="text" name="entities-quantity" id="form_input_number_of_entities_number_input" value="1"><br>
+                                <input type="text" name="entities-quantity" id="form_input_number_of_entities_number_input"><br>
                                 <button class="form_input_number_of_entities_number_input increment" onclick="inputEntitiesMaths(event)">+</button>
                             </div>
                             <div class="form_input_error_wrapper entities_display">
@@ -102,17 +107,11 @@
                 </form>
                 <form class="form edit_card" id="edit_card">
                     <div class="edit_nav_wrapper">
-                        <button class="edit_nav_button" id="prev_button">
-                            <img class="prev_button" src="./images/edit_arrow_left.svg">
-                        </button>
                         <div class="edit_title_wrapper" id="edit_wrapper_title">
                             <p class="edit_title_name">Soldier</p>
                             <p class="edit_title_entity_num">#33</p>
                             <p class="edit_title_type">entity</p>
                         </div>
-                        <button class="edit_nav_button" id="next_button">
-                            <img class="next_button" src="./images/edit_arrow_right.svg">
-                        </button>
                     </div>
                     <div class="edit_content_wrapper">
                         <div class="edit_content">
@@ -149,7 +148,7 @@
                         </div>
                     </div>
                     <div class="edit_submit_wrapper">
-                        <button class="edit_button submit_button" id="form_submit_button">Update</button>
+                        <button class="edit_button submit_button" id="form_submit_button" onclick="updateCard(event)">Update</button>
                         <button class="edit_button close_button" id="form_close_button" onclick="closeUpdateCard(event)">Close</button>
                     </div>
                 </form>
@@ -164,9 +163,9 @@
     <script src="./javascript/form_create_entities_intiative_logic.js"></script>
     <script src="./javascript/form_toggle_reset.js"></script>
     <script src="./javascript/form_reset_method.js"></script>
-    <script src="./javascript/card_health_initiative_method.js"></script>
+    <script src="./javascript/card_select_toggle.js"></script>
     <script src="./javascript/form_update_card.js"></script>
-    <script src="./javascript/auto_roll_order.js"></script>
-    <!--<script src="./javascript/toybox.js"></script>-->
+    <script src="./javascript/auto roll_order.js"></script>
+    <script src="./javascript/toybox.js"></script>
 </body>
 </html>

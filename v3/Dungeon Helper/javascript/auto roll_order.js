@@ -4,7 +4,12 @@ function delay(ms){
 async function initiativeRoll(){
     const get__cards = [...document.querySelectorAll('.card')];
     const filter__cards = get__cards.filter(card => card.getAttribute('data-card-type') !== 'playerCharacter');
+    const animation__delay = (filter__cards.length*600)/1000
+    const animation__time__change = document.querySelector('.loader');
 
+    animation__time__change.style.animation = `l2 ${animation__delay}s linear forwards`;
+
+    toggleOverlay();
     for(const card of filter__cards){
         let originalInitiative = Number(card.getAttribute('data-original'));
         let d20 = Math.floor(Math.random() * 20) + 1;
@@ -13,8 +18,9 @@ async function initiativeRoll(){
         if (htmlInitiative) {
             htmlInitiative.innerHTML = d20 + originalInitiative;
         }
-        await delay(200);
+        await delay(600);
     }
+    toggleOverlay();
 }
 
 function arrange() {
@@ -31,4 +37,16 @@ function arrange() {
     sortedCards.forEach((card, index) => {
         card.style.order = index;
     });
+}
+
+function toggleOverlay(){
+    let getOverylay = document.getElementById('overlayWrapper');
+    let overlay = window.getComputedStyle(getOverylay).display;
+    let button = document.getElementById('theButton');
+
+    if(overlay == 'block'){
+        getOverylay.style.display = 'none';
+    }else{
+        getOverylay.style.display = 'block';
+    }
 }

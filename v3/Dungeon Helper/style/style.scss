@@ -40,6 +40,51 @@ body{
 
     position: relative;
 }
+#theButton{
+    z-index: 3; 
+}
+.overlay-wrapper{
+    position: absolute;
+    display: none;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 2;
+
+    .overlay-grey{
+        position: relative;
+        z-index: 1;
+        width: 100vw;
+        height: 100vh;
+        top: 0;
+        left: 0;
+        background: #fff;
+        opacity: .7;
+    }
+    
+    .loader {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 2;
+        width: fit-content;
+        font-weight: bold;
+        font-family: monospace;
+        font-size: 25px;
+        padding: 5px;
+        background: linear-gradient(red 0 0) 0 100%/0% 3px no-repeat;
+        animation: l2 2s linear forwards;
+
+        @include font;
+
+    }
+    .loader::before {
+        content :"Rolling for Initiative...";
+    }
+    @keyframes l2 {to{background-size: 100% 3px}}
+}
 .app_container{
     @include flexCol;
     justify-content: center;
@@ -275,7 +320,7 @@ body{
             transform: translate(-50%, -50%);
 
             flex-direction: column;
-            height: 300px;
+            height: 292px;
             width: 375px;
 
             .edit_nav_wrapper{
@@ -285,7 +330,7 @@ body{
                     @include flexRow;
                     @include font;
                     width: 74%;
-                    padding: 0 20px;
+                    padding: 15px 20px 0px 20px;
                     text-align: center;
                     align-items: center;
                     box-sizing: border-box;
@@ -309,13 +354,6 @@ body{
                         margin: 0 0 -5px 0;
                         color: $textGrey;
                     }
-                }
-                .edit_nav_button{
-                    width: 50px;
-                    height: 50px;
-                    background-color: $lightGrey;
-                    color: $textColor;
-                    border: none;
                 }
             }
             .edit_content_wrapper{
@@ -572,7 +610,31 @@ body{
         }
     }
 }
-
+.character{
+    .card_text_unique_id{
+        display: none;
+    }
+}
+.playerCharacter{
+    .card_text_unique_id{
+        display: none;
+    }
+    .card_hitpoints_wrapper{
+        p{
+            opacity: .7;
+        }
+    
+        .card_text_hitpoints_line{
+            position: absolute;
+            top: 11px;
+            left: -11px;
+            width: 100px;
+            height: 4px;
+            background-color: $textGrey;
+            opacity: .7
+        }
+    }
+}
 //Card container media queries. 
 
 @media(min-width: 515px){

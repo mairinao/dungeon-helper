@@ -3,6 +3,7 @@ function formReset(event){
     const typeSelect = document.getElementById('form_type_entity_radio_id');
     const textInputs = document.querySelectorAll('input[type="text"]');
     const quantityInput = document.getElementById('form_input_number_of_entities_number_input');
+    const initiativeInput = document.getElementById('form_input_number_of_initiative_number_input');
     const clearTypeInput = document.getElementById('clearType');
     const clearSpecificInput = document.getElementById('clearSpecific');
 
@@ -15,6 +16,7 @@ function formReset(event){
 
     //Sets Entity Quantity to 1 for default.
     quantityInput.value = 1;
+    initiativeInput.value = 0;
     
 }
 function formToggle(event){
