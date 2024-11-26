@@ -123,9 +123,9 @@ function cardBuilder(iconName, initiativeValue, nameValue, numberId, hitpoints){
     cardHitpointsWrapper.appendChild(cardHitpointsLine);
 }
 
-cardBuilderOrder("entity", 4, "Soldier", 4, 3);
-cardBuilderOrder("character", 4, "Natai", 0, 71);
-cardBuilderOrder("character", 4, "Lolcat", 0, 71)
-cardBuilderOrder("playerCharacter", 4, "Dorito", 0, 144);
-cardBuilderOrder("playerCharacter", 4, "Mario   ", 0, 144);
+cardBuilderOrder("entity", 24, "Soldier", 4, 2);
+cardBuilderOrder("character", 14, "Natai", 71);
+cardBuilderOrder("character", 9, "Lolcat", 20)
+cardBuilderOrder("playerCharacter", 3, "Dorito", 0);
+cardBuilderOrder("playerCharacter", 1, "Mario   ", 0);
 

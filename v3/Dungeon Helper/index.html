@@ -7,7 +7,7 @@
     <title>Dungeon Helper</title>
 </head>
 <body>
-    <button id="theButton" onclick="closeUpdateCard(event)">Button 1</button>
+    <button id="theButton" onclick="toggleUpdateCard(event)">Button 1</button>
     <div  id="overlayWrapper" class="overlay-wrapper">
         <div class="overlay-grey"></div>
         <div class="loader"></div>
@@ -117,7 +117,10 @@
                         <div class="edit_content">
                             <div class="initiative_col">
                                 <p class="edit_text_title">Initiative</p>
-                                <p class="edit_text_value">18<span>(+3)</span></p>
+                                <div class="edit_value_row">
+                                    <p class="edit_text_value edit_initiative_current">21</p>
+                                    <p class="edit_text_value smallInitiative edit_initiative_original">(+1)</p>
+                                </div>
                             </div>
                             <div class="initiative_col">
                                 <div class="edit_input_wrapper">
@@ -133,7 +136,10 @@
                         <div class="edit_content">
                             <div class="hitpoints_col">
                                 <p class="edit_text_title">Hitpoints</p>
-                                <p class="edit_text_value edit_original_hp_color">80<span class="edit_original_hp_size">/99</span></p>
+                                <div class="edit_value_row">
+                                    <p class="edit_text_value edit_hp_current">80</p>
+                                    <p class="edit_text_value edit_hp_original">/99</p>
+                                </div>
                             </div>
                             <div class="hitpoints_col">
                                 <div class="edit_input_wrapper">
@@ -149,7 +155,7 @@
                     </div>
                     <div class="edit_submit_wrapper">
                         <button class="edit_button submit_button" id="form_submit_button" onclick="updateCard(event)">Update</button>
-                        <button class="edit_button close_button" id="form_close_button" onclick="closeUpdateCard(event)">Close</button>
+                        <button class="edit_button close_button" id="form_close_button" onclick="toggleUpdateCard(event)">Close</button>
                     </div>
                 </form>
             </div>

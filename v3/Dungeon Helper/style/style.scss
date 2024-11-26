@@ -372,6 +372,26 @@ body{
                         justify-content: center;
                         width: 50%;
 
+                        .edit_value_row{
+                            @include flexRow;
+                            margin-left: -70px;
+                            align-items: center;
+                            width: 100%;
+                            
+                            p{
+                                text-align: center;
+                            }
+                        }
+                        .edit_initiative_current{
+                            padding-right: 3%;
+                        }
+                        .removePadding{
+                            padding: 0;
+                        }
+                        .edit_initiative_original{
+                            padding-top: 6px;
+                            font-size: 15px;
+                        }
                         p{
                             padding: 0;
                             margin: 0;
@@ -381,6 +401,18 @@ body{
                         @include flexCol;
                         justify-content: center;
                         width: 50%;
+
+                        .edit_value_row{
+                            @include flexRow;
+                            margin-left: -70px;
+                            align-items: center;
+                            width: 100%;
+                        }
+
+                        .edit_hp_current{
+                            padding-right: 3px;
+                            color: $btnRed;
+                        }
 
                         p{
                             padding: 0;
@@ -412,7 +444,7 @@ body{
                             color: $textColor;
                         }
                     }
-                    .edit_original_hp_color{
+                    .edit_current_hp{
                         color: $red !important;
                     }
                     .edit_input_wrapper{

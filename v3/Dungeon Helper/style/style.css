@@ -357,6 +357,26 @@ body {
   justify-content: center;
   width: 50%;
 }
+.app_nav .app_nav_form_wrapper .edit_card .edit_content_wrapper .edit_content .initiative_col .edit_value_row {
+  display: flex;
+  flex-direction: row;
+  margin-left: -70px;
+  align-items: center;
+  width: 100%;
+}
+.app_nav .app_nav_form_wrapper .edit_card .edit_content_wrapper .edit_content .initiative_col .edit_value_row p {
+  text-align: center;
+}
+.app_nav .app_nav_form_wrapper .edit_card .edit_content_wrapper .edit_content .initiative_col .edit_initiative_current {
+  padding-right: 3%;
+}
+.app_nav .app_nav_form_wrapper .edit_card .edit_content_wrapper .edit_content .initiative_col .removePadding {
+  padding: 0;
+}
+.app_nav .app_nav_form_wrapper .edit_card .edit_content_wrapper .edit_content .initiative_col .edit_initiative_original {
+  padding-top: 6px;
+  font-size: 15px;
+}
 .app_nav .app_nav_form_wrapper .edit_card .edit_content_wrapper .edit_content .initiative_col p {
   padding: 0;
   margin: 0;
@@ -366,6 +386,17 @@ body {
   flex-direction: column;
   justify-content: center;
   width: 50%;
+}
+.app_nav .app_nav_form_wrapper .edit_card .edit_content_wrapper .edit_content .hitpoints_col .edit_value_row {
+  display: flex;
+  flex-direction: row;
+  margin-left: -70px;
+  align-items: center;
+  width: 100%;
+}
+.app_nav .app_nav_form_wrapper .edit_card .edit_content_wrapper .edit_content .hitpoints_col .edit_hp_current {
+  padding-right: 3px;
+  color: #FF5252;
 }
 .app_nav .app_nav_form_wrapper .edit_card .edit_content_wrapper .edit_content .hitpoints_col p {
   padding: 0;
@@ -397,7 +428,7 @@ body {
   font-size: 24px !important;
   color: #39404D;
 }
-.app_nav .app_nav_form_wrapper .edit_card .edit_content_wrapper .edit_content .edit_original_hp_color {
+.app_nav .app_nav_form_wrapper .edit_card .edit_content_wrapper .edit_content .edit_current_hp {
   color: #FF0202 !important;
 }
 .app_nav .app_nav_form_wrapper .edit_card .edit_content_wrapper .edit_content .edit_input_wrapper {
