@@ -312,6 +312,10 @@ body{
                 padding-left: 30px;
             }
         }
+        .edit_hidden{
+            display: flex !important;
+        }
+
         .edit_card{
             display: none;
             position: fixed;
@@ -359,6 +363,10 @@ body{
             .edit_content_wrapper{
                 @include flexCol;
                 width: 100%;
+
+                input{
+                    text-align: center;
+                }
 
                 .edit_content{  
                     @include flexRow;
@@ -473,7 +481,11 @@ body{
                             border-right: none;
                         }
                     }
+                    .edit_error_message_hidden{
+                        display: none !important;
+                    }
                     .edit_error_wrapper{
+                        display: block;
                         @include font;
                         position: relative;
                         left: 5px;
@@ -608,7 +620,7 @@ body{
                     position: relative;
                     top: -5px;
                     height: 100%;
-                    width: 60%;
+                    width: 100%;
                     background-color: $hpGreen;
                 }
             }

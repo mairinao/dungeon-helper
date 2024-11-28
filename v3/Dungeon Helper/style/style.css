@@ -294,6 +294,9 @@ body {
 .app_nav .app_nav_form_wrapper .form .form_input_wrapper_col {
   padding-left: 30px;
 }
+.app_nav .app_nav_form_wrapper .edit_hidden {
+  display: flex !important;
+}
 .app_nav .app_nav_form_wrapper .edit_card {
   display: none;
   position: fixed;
@@ -342,6 +345,9 @@ body {
   display: flex;
   flex-direction: column;
   width: 100%;
+}
+.app_nav .app_nav_form_wrapper .edit_card .edit_content_wrapper input {
+  text-align: center;
 }
 .app_nav .app_nav_form_wrapper .edit_card .edit_content_wrapper .edit_content {
   display: flex;
@@ -457,7 +463,11 @@ body {
   border-radius: 5px 0 0 5px;
   border-right: none;
 }
+.app_nav .app_nav_form_wrapper .edit_card .edit_content_wrapper .edit_content .edit_error_message_hidden {
+  display: none !important;
+}
 .app_nav .app_nav_form_wrapper .edit_card .edit_content_wrapper .edit_content .edit_error_wrapper {
+  display: block;
   font-family: Arial, Helvetica, sans-serif;
   color: #39404D;
   position: relative;
@@ -591,7 +601,7 @@ body {
   position: relative;
   top: -5px;
   height: 100%;
-  width: 60%;
+  width: 100%;
   background-color: #A0ED85;
 }
 .app_inner_card_container .app_inner_card_container_center_wrapper .card .card_hitpoints_wrapper {

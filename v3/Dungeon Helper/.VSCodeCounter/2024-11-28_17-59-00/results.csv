@@ -1,0 +1,23 @@
+"filename", "language", "HTML", "JavaScript", "CSS", "XML", "SCSS", "comment", "blank", "total"
+"c:\Users\nm\Documents\GitHub\dungeon-helper\v3\Dungeon Helper\images\app_title.svg", "XML", 0, 0, 0, 15, 0, 0, 1, 16
+"c:\Users\nm\Documents\GitHub\dungeon-helper\v3\Dungeon Helper\images\character_icon.svg", "XML", 0, 0, 0, 3, 0, 0, 1, 4
+"c:\Users\nm\Documents\GitHub\dungeon-helper\v3\Dungeon Helper\images\character_red_icon.svg", "XML", 0, 0, 0, 3, 0, 0, 1, 4
+"c:\Users\nm\Documents\GitHub\dungeon-helper\v3\Dungeon Helper\images\edit_arrow_left.svg", "XML", 0, 0, 0, 3, 0, 0, 1, 4
+"c:\Users\nm\Documents\GitHub\dungeon-helper\v3\Dungeon Helper\images\edit_arrow_right.svg", "XML", 0, 0, 0, 3, 0, 0, 1, 4
+"c:\Users\nm\Documents\GitHub\dungeon-helper\v3\Dungeon Helper\images\entity_icon.svg", "XML", 0, 0, 0, 3, 0, 0, 1, 4
+"c:\Users\nm\Documents\GitHub\dungeon-helper\v3\Dungeon Helper\images\entity_red_icon.svg", "XML", 0, 0, 0, 3, 0, 0, 1, 4
+"c:\Users\nm\Documents\GitHub\dungeon-helper\v3\Dungeon Helper\images\playerCharacter_icon.svg", "XML", 0, 0, 0, 3, 0, 0, 1, 4
+"c:\Users\nm\Documents\GitHub\dungeon-helper\v3\Dungeon Helper\images\playerCharacter_red_icon.svg", "XML", 0, 0, 0, 4, 0, 0, 1, 5
+"c:\Users\nm\Documents\GitHub\dungeon-helper\v3\Dungeon Helper\index.html", "HTML", 176, 0, 0, 0, 0, 0, 1, 177
+"c:\Users\nm\Documents\GitHub\dungeon-helper\v3\Dungeon Helper\javascript\auto roll_order.js", "JavaScript", 0, 42, 0, 0, 0, 2, 8, 52
+"c:\Users\nm\Documents\GitHub\dungeon-helper\v3\Dungeon Helper\javascript\card_select_toggle.js", "JavaScript", 0, 0, 0, 0, 0, 27, 3, 30
+"c:\Users\nm\Documents\GitHub\dungeon-helper\v3\Dungeon Helper\javascript\form_create_check_submit.js", "JavaScript", 0, 83, 0, 0, 0, 2, 12, 97
+"c:\Users\nm\Documents\GitHub\dungeon-helper\v3\Dungeon Helper\javascript\form_create_dynamic_builder.js", "JavaScript", 0, 106, 0, 0, 0, 4, 22, 132
+"c:\Users\nm\Documents\GitHub\dungeon-helper\v3\Dungeon Helper\javascript\form_create_entities_intiative_logic.js", "JavaScript", 0, 79, 0, 0, 0, 2, 15, 96
+"c:\Users\nm\Documents\GitHub\dungeon-helper\v3\Dungeon Helper\javascript\form_reset_method.js", "JavaScript", 0, 58, 0, 0, 0, 0, 5, 63
+"c:\Users\nm\Documents\GitHub\dungeon-helper\v3\Dungeon Helper\javascript\form_toggle_reset.js", "JavaScript", 0, 56, 0, 0, 0, 1, 10, 67
+"c:\Users\nm\Documents\GitHub\dungeon-helper\v3\Dungeon Helper\javascript\form_update_card.js", "JavaScript", 0, 0, 0, 0, 0, 0, 1, 1
+"c:\Users\nm\Documents\GitHub\dungeon-helper\v3\Dungeon Helper\javascript\toybox.js", "JavaScript", 0, 103, 0, 0, 0, 19, 29, 151
+"c:\Users\nm\Documents\GitHub\dungeon-helper\v3\Dungeon Helper\style\style.css", "CSS", 0, 0, 668, 0, 0, 0, 9, 677
+"c:\Users\nm\Documents\GitHub\dungeon-helper\v3\Dungeon Helper\style\style.scss", "SCSS", 0, 0, 0, 0, 674, 4, 42, 720
+"Total", "-", 176, 527, 668, 40, 674, 61, 166, 2312

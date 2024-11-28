@@ -11,7 +11,6 @@ document.querySelector('.app_inner_card_container_center_wrapper').addEventListe
         }
 
         const buttonID = cardElementClicked.id;
-        
 
         // Handle button clicks using the button ID
         if (buttonID) {
@@ -40,37 +39,112 @@ document.querySelector('.app_inner_card_container_center_wrapper').addEventListe
                 const initiativeOriginal = cardElementClicked.dataset.original || "N/A"; 
                 const initialHitpoints = cardElementClicked.querySelector('.card_text_hitpoints_original_hp')?.innerHTML || "0";
                 const currentHitpoints = cardElementClicked.querySelector('.card_text_hitpoints_current_hp')?.innerHTML || "0";
+                const cardUniqueId = cardElementClicked.dataset.cardId;
 
+                document.querySelector('#edit_card').dataset.cardId = cardUniqueId;
                 
-                toggleUpdateCard(event);
-                updateCard(cardName, cardTextUniqueId, cardType, initiativeTotal, initiativeOriginal, currentHitpoints, initialHitpoints);
+                toggleRenderForm(event);
+                renderEditForm(cardName, cardTextUniqueId, cardType, initiativeTotal, initiativeOriginal, currentHitpoints, initialHitpoints);
 
             } catch (error) {
                 console.error("Error while handling card click", error);
             }
         }
-    })
+});
+document.querySelectorAll('.edit_input_modify_input').forEach(button => {
+    button.addEventListener('click', function (event){
+        event.preventDefault();
+        const hpModBtn = this.classList.contains("hp_mod_input");
+        const intModBtn = this.classList.contains("int_mod_input");
+        const isSubtract = this.innerHTML == "-"
+
+        const inputField = this.closest('.edit_input_wrapper').querySelector('input');
+        const currenFieldtValue = Number(inputField.value);
+        const newInputFieldValue = isSubtract ? currenFieldtValue - 1 : currenFieldtValue + 1;
+
+        inputField.value = newInputFieldValue;
+
+        if(hpModBtn){
+            console.log("Hp modified:", newInputFieldValue);
+        }else if(intModBtn){
+            console.log("Initiative modified:", newInputFieldValue);
+        }else{
+            console.error("Error");
+        } 
+    });
+});
+document.querySelector('#edit_card').addEventListener('submit', function (event){
+    event.preventDefault();
+
+    let shouldStop = true;
+    const fetchInputFields = document.querySelectorAll('.edit_content');
+   
+
+    fetchInputFields.forEach(fetchInputField => {
+        const input = fetchInputField.querySelector('input');
+        const errorMsg = fetchInputField.querySelector('.edit_error_wrapper');
+        if(/^[-]?\d+$/.test(input.value)){
+            errorMsg.classList.add('edit_error_message_hidden');
+        }else{
+            errorMsg.classList.remove('edit_error_message_hidden');
+            shouldStop = false;
+        }
+    });
+
+    if(shouldStop){
+        const cardData = this.dataset.cardId; //Gives me unique card ID.
+        const card = document.querySelector(`.card[data-card-id="${cardData}"]`); //Fetches whole card using the unique ID.
+    
+        //Extracts values.
+        const currentHp = Number(card.querySelector('.card_text_hitpoints_current_hp').textContent);
+        const currentInitiative = Number(card.querySelector('.card_text_initiative_value').textContent);
+    
+        //Check values.
+        const hpChange = Number(this.querySelector('#hitpoints_input_id').value) || 0;
+        const initiativeChange = Number(this.querySelector('#initiative_input_id').value) || 0;
+    
+        //Calculates new values.
+        const newHp = calculateNewValue(currentHp, hpChange);
+        const newInitiative = calculateNewValue(currentInitiative, initiativeChange);
+    
+        //Update DOM
+        const hpElement = card.querySelector('.card_text_hitpoints_current_hp');
+        const initativeElement = card.querySelector('.card_text_initiative_value');
+    
+        hpElement.textContent = hpChange ? newHp : currentHp;
+        initativeElement.textContent = initiativeChange ? newInitiative : currentInitiative;
+        toggleRenderForm(event);
+    }else{
+        console.error("Error 2");
+    }
+
+});
 
 function toggleSelected(element, iconUrl, redIconUrl) {
     const hasSelected = element.classList.toggle('selected');
     element.style.backgroundImage = hasSelected ? `url(${redIconUrl})` : `url(${iconUrl})`;
 }
 
-function toggleUpdateCard(event) {
+function toggleRenderForm(event){
     event.preventDefault();
-    const editCard = document.getElementById("edit_card");
-    const cardToggled = editCard.style.display;
+    const getClass = document.getElementById("edit_card");
+    const isHidden = getClass.classList.toggle("edit_hidden");
+    
+    const fetchInputFieldsToClear = document.querySelectorAll('.edit_content');
 
-    if (cardToggled === 'flex') {
-        editCard.style.display = "none";
-        document.getElementById("initiative_input_id").value = "";
-        document.getElementById("hitpoints_input_id").value = "";
-    } else {
-        editCard.style.display = "flex";
-    }
+    fetchInputFieldsToClear.forEach( x => {
+        const input = x.querySelector('input');
+        const errorMsg = x.querySelector('.edit_error_wrapper');
+
+        input.value = 0;
+        errorMsg.classList.add('edit_error_message_hidden');
+    });
+
+
+    console.log(`Edit card is now ${isHidden ? "visible" : "hidden"}`);
 }
 
-function updateCard(name, id, type, initiativeCurrent, initiativeOriginal, hitpointsCurrent, hitpointsOriginal) {
+function renderEditForm(name, id, type, initiativeCurrent, initiativeOriginal, hitpointsCurrent, hitpointsOriginal) {
     
     const elements = {
         name: document.querySelector('.edit_title_name'),
@@ -89,13 +163,9 @@ function updateCard(name, id, type, initiativeCurrent, initiativeOriginal, hitpo
     elements.initiativeOriginal.textContent = `(+${initiativeOriginal})`;
     elements.hitpointsCurrent.textContent = hitpointsCurrent;
     elements.hitpointsOriginal.textContent = hitpointsOriginal;
-
-    const initiativeElement = elements.initiativeCurrent;
-    if (initiativeCurrent > 10) {
-        initiativeElement.classList.add('removePadding');
-    } else {
-        initiativeElement.classList.remove('removePadding');
-    }
 }
 
+function calculateNewValue(current, change){
+    return change < 0 ? change + current : current + change;
+}
     

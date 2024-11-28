@@ -7,7 +7,7 @@
     <title>Dungeon Helper</title>
 </head>
 <body>
-    <button id="theButton" onclick="toggleUpdateCard(event)">Button 1</button>
+    <button id="theButton" onclick="smaller()">Button 1</button>
     <div  id="overlayWrapper" class="overlay-wrapper">
         <div class="overlay-grey"></div>
         <div class="loader"></div>
@@ -122,13 +122,13 @@
                                     <p class="edit_text_value smallInitiative edit_initiative_original">(+1)</p>
                                 </div>
                             </div>
-                            <div class="initiative_col">
+                            <div class="initiative_col edit_col">
                                 <div class="edit_input_wrapper">
-                                    <button class="edit_input_modify_input">-</button>
-                                    <input id="initiative_input_id">
-                                    <button class="edit_input_modify_input">+</button>
+                                    <button type="button" class="edit_input_modify_input int_mod_input">-</button>
+                                    <input id="initiative_input_id" value="0">
+                                    <button type="button" class="edit_input_modify_input int_mod_input">+</button>
                                 </div>
-                                <div class="edit_error_wrapper">
+                                <div class="edit_error_wrapper edit_error_message_hidden">
                                     Number Only.
                                 </div>
                             </div>
@@ -141,21 +141,21 @@
                                     <p class="edit_text_value edit_hp_original">/99</p>
                                 </div>
                             </div>
-                            <div class="hitpoints_col">
+                            <div class="hitpoints_col edit_col">
                                 <div class="edit_input_wrapper">
-                                    <button class="edit_input_modify_input">-</button>
-                                    <input id="hitpoints_input_id">
-                                    <button class="edit_input_modify_input">+</button>
+                                    <button type="button" class="edit_input_modify_input hp_mod_input">-</button>
+                                    <input id="hitpoints_input_id" value="0">
+                                    <button type="button" class="edit_input_modify_input hp_mod_input">+</button>
                                 </div>
-                                <div class="edit_error_wrapper">
+                                <div class="edit_error_wrapper edit_error_message_hidden">
                                     Number Only.
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div class="edit_submit_wrapper">
-                        <button class="edit_button submit_button" id="form_submit_button" onclick="updateCard(event)">Update</button>
-                        <button class="edit_button close_button" id="form_close_button" onclick="toggleUpdateCard(event)">Close</button>
+                        <button type="submit" class="edit_button submit_button" id="form_submit_button">Update</button>
+                        <button type="button" class="edit_button close_button" id="form_close_button" onclick="toggleRenderForm(event)">Close</button>
                     </div>
                 </form>
             </div>
