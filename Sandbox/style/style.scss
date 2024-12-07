@@ -1,0 +1,237 @@
+$textColor : #383a3f;
+$textGrey: #747474;
+$veryLightGrey: #F4F4F4;
+$lightGrey: #E1E1E1;
+$red : #FF0202;
+$hpGreen: #A0ED85;
+$hpRed: #ED8585;
+$gold: #EBC43D;
+$btnGold: #FCD964;
+$btnRed: #FF5252;
+$btnGreen: #78A86C;
+$inputBorder: #D6D9E1;
+
+$textColorBlack: #292929;
+$inputFieldBorder : #949494;
+$inputField: #fff;
+
+
+
+*{
+    margin: 0;
+    padding: 0;
+    font-family: Inter;
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    width: 100vw;
+    height: 100vh;
+    background-color: #484646;
+}
+
+.form_wrapper{
+    display: flex;
+    flex-direction: column;
+    width: 375px;
+    height: 280px;
+    padding: 10px 0 0 0;
+    border-radius: 2px;
+    background-color: #fff;
+    box-sizing: border-box;
+    
+
+    h1{
+        font-size: 18px;
+        font-weight: 700;
+        padding: 10px;
+    }
+
+    .form_button_wrapper{
+        display: flex;
+        flex-direction: row;
+        position: relative;
+        bottom: -65px;
+
+        .yllw_btn, .grn_btn, .red_btn{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 45px;
+        }
+        .yllw_btn{
+            font-weight: 640;
+            font-size: 20px;
+            background-color: $btnGold;
+            color: $textColorBlack;
+        }
+        .red_btn{
+            font-weight: 640;
+            font-size: 20px;
+            background-color: $btnRed;
+            color: $inputField;
+        }
+    }
+}
+
+.create_character_form{
+    .cc_form_btn_wrapper{
+        margin: 10px;
+
+        .cc_top_btn{
+            padding: 4px;
+            background-color: #FFF;
+            border: 1px solid $btnGold;
+            border-radius: 1px;
+        }
+        .cc_top_btn:nth-child(3){
+            position: relative;
+            right: -65px;
+        }
+    }
+    .cc_form{
+        overflow: hidden;
+        padding: 0 10px 10px 10px;
+        
+        .label_wrapper{
+            display: flex;
+            flex-direction: row;
+            letter-spacing: -0.025em;
+
+            label{
+                font-size: 12px;
+                margin-bottom: 6px;
+                height: 15.2px;
+                min-width: 10px;
+            }
+            .col{
+                margin: 0 5px 5px 0;
+            }
+            .col:nth-child(1){
+                width: 100px;
+            }
+            .col:nth-child(2){
+                width: 54px;
+            }
+            .col:nth-child(3){
+                width: 55px;
+            }
+            .col:nth-child(4){
+                width: 50px;
+            }
+            .col:nth-child(5){
+                width: 55px;
+            }
+        }
+        .fields_wrapper{
+            max-height: 120px;
+            box-sizing: border-box;
+            overflow-y: scroll;
+            overflow-x: hidden;
+
+            .create_input_instance{
+                display: flex;
+                flex-direction: row;
+        
+                .col{
+                    display: flex;
+                    flex-direction: column;
+                    margin: 0 5px 5px 0;
+    
+                    select{
+                        width: 99px;
+                        height: 25px;
+                        background: $inputField;
+                        border: 1px solid $inputFieldBorder;
+                        text-align: center;
+                        padding-left: 3px;
+                        font-size: 12px;
+                        
+                        .inner_circle{
+                            background-color: #292929;
+                            border-radius: 100%;
+                            height: 10px;
+                            width: 10px;
+                        }
+                    }
+                    select option{
+                        font-family: Inter, arial;
+                        font-size: 13px; 
+                    }
+                    input{
+                        height: 25px;
+                        background: $inputField;
+                        border: 1px solid $inputFieldBorder;
+                        border-radius: 1px;
+                        text-align: center;
+                        font-size: 12px;
+                        box-sizing: border-box;
+                    }
+                    input:focus{
+                        outline: none;
+                        border: 1px solid $inputFieldBorder;
+                    }
+                }
+                .cc_name{
+                    input{
+                        width: 55px;
+                    }
+                }
+                .cc_intBonus{
+                    input{
+                        width: 54px;
+                    }
+                }
+                .cc_hitpoints{
+                    input{
+                        width: 50px;
+                    }
+                }
+                .cc_quantity{
+                    input{
+                        width: 50px
+                    }
+                }
+                .cc_deleteBtn{
+                    padding: 2px;
+                    .btn{
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        width: 20px;
+                        height: 20px;
+                        margin-top: 1px;
+                        background-color: $btnRed;
+                        border: none;
+                        border-radius: 100%;
+    
+                        span{
+                            width: 12px;
+                            height: 4px;
+                            background-color: $inputField;
+                        }
+                    }
+                }
+            }
+        }
+        .fields_wrapper > *:last-child{
+            margin-bottom: 10px;
+        }
+        .fields_wrapper::-webkit-scrollbar {
+            position: absolute;
+            right: -44px;
+          }
+    }
+    .form_button_wrapper{
+        .cc_create{
+            width: 70%;
+        }
+        .cc_close{
+            width: 30%;
+        }
+    }
+}
+

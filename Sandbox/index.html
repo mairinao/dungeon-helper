@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+    <title>Document</title>
+</head>
+<body>
+    <div class="create_character_form form_wrapper">    
+        <h1>Create Characters</h1>
+        <div class="cc_form_btn_wrapper">
+            <button class="cc_top_btn">Load Characters</button>
+            <button class="cc_top_btn">Save Characters</button>
+            <button class="cc_top_btn">Add More</button>
+        </div>
+        <form class="cc_form">
+            <div class="label_wrapper">
+                <div class="col">
+                    <label>Type</label>
+                </div>
+                <div class="col">
+                    <label>Name</label>
+                </div>
+                <div class="col">
+                    <label>Int Bonus</label>
+                </div>
+                <div class="col">
+                    <label>Hitpoints</label>
+                </div>
+                <div class="col">
+                    <label>Quantity</label>
+                </div>
+                <div class="col">
+                    <label></label>
+                </div>
+            </div>
+            <div class="fields_wrapper">
+                <div class="create_input_instance">
+                    <div class="col cc_type">
+                        <select name="type" id="cc_type">
+                            <option value="entity"><div class="inner_circle"></div>Entity</option>
+                            <option value="character"><div class="inner_circle"></div>Character</option>
+                            <option value="player_character"><div class="inner_circle"></div>PC</option>
+                        </select>
+                    </div>
+                    <div class="col cc_name">
+                        <input id="cc_name">
+                    </div>
+                    <div class="col cc_intBonus">
+                        <input id="cc_intBonus">
+                    </div>
+                    <div class="col cc_hitpoints">
+                        <input id="cc_hitpoints">
+                    </div>
+                    <div class="col cc_quantity">
+                        <input id="cc_quantity">
+                    </div>
+                    <div class="col cc_deleteBtn"> 
+                        <button class="btn btn_delete">
+                            <span></span>
+                        </button>
+                    </div>
+                </div>
+         
+            </div>
+        </form>
+        <div class="form_error_wrapper"></div>
+        <div class="form_button_wrapper">
+            <div class="cc_create yllw_btn"><p>Create</p></div>
+            <div class="cc_close red_btn"><p>Close</p></div>
+        </div>
+    </div>
+</body>
+</html>
