@@ -7,7 +7,6 @@
     <title>Dungeon Helper</title>
 </head>
 <body>
-    <button id="theButton" onclick="smaller()">Button 1</button>
     <div  id="overlayWrapper" class="overlay-wrapper">
         <div class="overlay-grey"></div>
         <div class="loader"></div>
@@ -31,12 +30,15 @@
                     <div class="form_type_select_wrapper">
                         <input type="radio" id="form_type_entity_radio_id" class="form_type_entity_radio" name="type-select" value="entity">
                         <label for="form_type_entity_radio_id" class="custom-radio entity_radio_css" onclick="createForm_entityTypeSelection('entity', event)" checked>
+                            <p class="createForm_entity_label">Entity</p>
                         </label>
                         <input type="radio" id="form_type_character_radio_id" class="form_type_character_radio" name="type-select" value="character">
                         <label for="form_type_character_radio_id" class="custom-radio character_radio_css" onclick="createForm_entityTypeSelection('character', event)">
+                            <p class="createForm_character_label">Character</p>
                         </label>
                         <input type="radio" id="form_type_playerCharacter_radio_id" class="form_type_playerCharacter_radio" name="type-select" value="playerCharacter">
                         <label for="form_type_playerCharacter_radio_id" class="custom-radio playerCharacter_radio_css" onclick="createForm_entityTypeSelection('playerCharacter', event)">
+                            <p class="createForm_pc_label">Player Character</p>
                         </label>
                     </div>
                     <div class="form_input_wrapper">
@@ -82,11 +84,11 @@
                     </div>
                     <div class="form_input_wrapper form_input_wrapper_col">
                         <div class="drop_menu_wrapper">
-                            <label for="clearType">Clear Type</label>
+                            <label for="clearType">Clear by Type</label>
                             <select name="clearType" id="clearType">
                                 <option value="none" selected   >-- --</option>
-                                <option value="clearAll">Clear All Entities</option>
-                                <option value="clearEntities">Clear common Entities</option>
+                                <option value="clearAll">Clear Entities</option>
+                                <option value="clearEntities">Clear Common Entities</option>
                                 <option value="clearCharacters">Clear NPC Characters</option>
                                 <option value="clearPlayerCharacters">Clear Player Characters</option>
                             </select> 

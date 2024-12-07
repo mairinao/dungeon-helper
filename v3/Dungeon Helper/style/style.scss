@@ -1,5 +1,6 @@
-$textColor : #39404D;
+$textColor : #383a3f;
 $textGrey: #747474;
+$veryLightGrey: #F4F4F4;
 $lightGrey: #E1E1E1;
 $red : #FF0202;
 $hpGreen: #A0ED85;
@@ -8,6 +9,9 @@ $gold: #EBC43D;
 $btnGold: #FCD964;
 $btnRed: #FF5252;
 $inputBorder: #D6D9E1;
+
+$textColorBlack: #292929;
+$inputFieldBorder : #949494;
 
 @mixin flexCol{
     display: flex;
@@ -18,7 +22,7 @@ $inputBorder: #D6D9E1;
     flex-direction: row;
 }
 @mixin font{
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: Helvetica, sans-serif;
     color: $textColor;
 }
 
@@ -116,14 +120,15 @@ body{
 
     .app_nav_wrapper_centered{
         @include flexRow;
-        width: 100%;
+        width: 80%;
         max-width: 500px;
-        justify-content: space-around;
+        justify-content: space-evenly;
+        flex-wrap: wrap;
         .app_nav_btn{
             @include font;
             font-size: 20px;
             font-weight: 700;
-            padding: 10px 5px;
+            padding: 7px 5px;
             border: none;
             background-color: transparent;
         }
@@ -143,7 +148,7 @@ body{
             left: 0%;
             width: 100%;
             min-width: 350px;
-            max-width: 500px;
+            max-width: 450px;
             background-color: #fff;
             box-shadow: 1px 0px 15px rgb(180, 180, 180);
             z-index: 2;
@@ -151,6 +156,8 @@ body{
 
             .form_title_wrapper{
                 text-align: left;
+                background-color: $veryLightGrey;
+
                 .form_title_text{
                     @include font;
                     margin: 0 0 25px 0;
@@ -158,6 +165,7 @@ body{
                     font-weight: 700;
                     padding-left: 20px;
                     padding-top: 20px;
+                    height: 40px;
                 }
             }
             .form_type_select_wrapper{
@@ -169,14 +177,31 @@ body{
                     display: none;
                 }
                 label{
-                    width: 40px;
-                    height: 32px;
+                    width: 50px;
+                    height: 40px;
                 }
                 .custom-radio{
-                    background-size: 40px 32px;
+                    display: flex;
+                    justify-content: center;
+                    background-size: 50px 40px;
                     background-repeat: no-repeat;
                     background-position: center;
-                    margin: 0 30px;
+                    margin: 0 40px 30px 40px;
+                    text-align: center;
+                    
+                    p{
+                        @include font;
+                        padding-top: 30px;
+                        text-align: center;
+                        font-size: 14px;
+                        font-weight: 700;
+                    }
+                    .createForm_entity_label{
+                        padding-top: 37px;
+                    }
+                    .createForm_character_label{
+                        padding-top: 37px;
+                    }
                 }
                 #form_type_entity_radio_id + .custom-radio {
                     background-image: url("../images/entity_icon.svg");
@@ -535,7 +560,7 @@ body{
     position: fixed;
     left: 50%;
     transform: translateX(-50%);
-    top: 25%;
+    top: 200px;
     overflow-y: scroll;
     box-sizing: content-box;
     
@@ -549,7 +574,7 @@ body{
         width: 295px;
         gap: 40px 15px;
         position: fixed;
-        top: 10%;
+        top: 12%;
 
         p{
             margin: 0;

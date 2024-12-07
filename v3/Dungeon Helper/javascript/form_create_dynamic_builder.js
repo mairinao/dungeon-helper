@@ -62,7 +62,6 @@ function cardBuilder(iconName, initiativeValue, nameValue, numberId, hitpoints){
     const cardHitpointsDesc = document.createElement("p");
     const cardHitpointsCurrentHp =  document.createElement("p");
     const cardHitpointsOriginalHp =  document.createElement("p");
-    const cardHitpointsLine = document.createElement("p");
 
 
     newCardDiv.className = "card" + " " + iconName;
@@ -102,7 +101,6 @@ function cardBuilder(iconName, initiativeValue, nameValue, numberId, hitpoints){
     cardHitpointsCurrentHp.textContent = (hitpoints);
     cardHitpointsOriginalHp.className = ("card_text_hitpoints_original_hp");
     cardHitpointsOriginalHp.textContent = `/${hitpoints}`;
-    cardHitpointsLine.className = ("card_text_hitpoints_line");
 
 
     
@@ -120,7 +118,6 @@ function cardBuilder(iconName, initiativeValue, nameValue, numberId, hitpoints){
     cardHitpointsWrapper.appendChild(cardHitpointsDesc);
     cardHitpointsWrapper.appendChild(cardHitpointsCurrentHp);
     cardHitpointsWrapper.appendChild(cardHitpointsOriginalHp);
-    cardHitpointsWrapper.appendChild(cardHitpointsLine);
 }
 
 cardBuilderOrder("entity", 24, "Soldier", 4, 2);

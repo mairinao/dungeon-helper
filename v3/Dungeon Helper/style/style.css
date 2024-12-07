@@ -50,8 +50,8 @@ body {
   padding: 5px;
   background: linear-gradient(red 0 0) 0 100%/0% 3px no-repeat;
   animation: l2 2s linear forwards;
-  font-family: Arial, Helvetica, sans-serif;
-  color: #39404D;
+  font-family: Helvetica, sans-serif;
+  color: #383a3f;
 }
 .overlay-wrapper .loader::before {
   content: "Rolling for Initiative...";
@@ -95,16 +95,17 @@ body {
 .app_nav .app_nav_wrapper_centered {
   display: flex;
   flex-direction: row;
-  width: 100%;
+  width: 80%;
   max-width: 500px;
-  justify-content: space-around;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
 }
 .app_nav .app_nav_wrapper_centered .app_nav_btn {
-  font-family: Arial, Helvetica, sans-serif;
-  color: #39404D;
+  font-family: Helvetica, sans-serif;
+  color: #383a3f;
   font-size: 20px;
   font-weight: 700;
-  padding: 10px 5px;
+  padding: 7px 5px;
   border: none;
   background-color: transparent;
 }
@@ -122,7 +123,7 @@ body {
   left: 0%;
   width: 100%;
   min-width: 350px;
-  max-width: 500px;
+  max-width: 450px;
   background-color: #fff;
   box-shadow: 1px 0px 15px rgb(180, 180, 180);
   z-index: 2;
@@ -130,15 +131,17 @@ body {
 }
 .app_nav .app_nav_form_wrapper .form .form_title_wrapper {
   text-align: left;
+  background-color: #F4F4F4;
 }
 .app_nav .app_nav_form_wrapper .form .form_title_wrapper .form_title_text {
-  font-family: Arial, Helvetica, sans-serif;
-  color: #39404D;
+  font-family: Helvetica, sans-serif;
+  color: #383a3f;
   margin: 0 0 25px 0;
   font-size: 18px;
   font-weight: 700;
   padding-left: 20px;
   padding-top: 20px;
+  height: 40px;
 }
 .app_nav .app_nav_form_wrapper .form .form_type_select_wrapper {
   display: flex;
@@ -150,14 +153,31 @@ body {
   display: none;
 }
 .app_nav .app_nav_form_wrapper .form .form_type_select_wrapper label {
-  width: 40px;
-  height: 32px;
+  width: 50px;
+  height: 40px;
 }
 .app_nav .app_nav_form_wrapper .form .form_type_select_wrapper .custom-radio {
-  background-size: 40px 32px;
+  display: flex;
+  justify-content: center;
+  background-size: 50px 40px;
   background-repeat: no-repeat;
   background-position: center;
-  margin: 0 30px;
+  margin: 0 40px 30px 40px;
+  text-align: center;
+}
+.app_nav .app_nav_form_wrapper .form .form_type_select_wrapper .custom-radio p {
+  font-family: Helvetica, sans-serif;
+  color: #383a3f;
+  padding-top: 30px;
+  text-align: center;
+  font-size: 14px;
+  font-weight: 700;
+}
+.app_nav .app_nav_form_wrapper .form .form_type_select_wrapper .custom-radio .createForm_entity_label {
+  padding-top: 37px;
+}
+.app_nav .app_nav_form_wrapper .form .form_type_select_wrapper .custom-radio .createForm_character_label {
+  padding-top: 37px;
 }
 .app_nav .app_nav_form_wrapper .form .form_type_select_wrapper #form_type_entity_radio_id + .custom-radio {
   background-image: url("../images/entity_icon.svg");
@@ -182,8 +202,8 @@ body {
   flex-direction: row;
 }
 .app_nav .app_nav_form_wrapper .form .form_input_wrapper label {
-  font-family: Arial, Helvetica, sans-serif;
-  color: #39404D;
+  font-family: Helvetica, sans-serif;
+  color: #383a3f;
   font-size: 14px;
   font-weight: 600;
   margin-bottom: 7px;
@@ -237,8 +257,8 @@ body {
   border-left: 0;
 }
 .app_nav .app_nav_form_wrapper .form .form_input_wrapper .form_input_error_wrapper {
-  font-family: Arial, Helvetica, sans-serif;
-  color: #39404D;
+  font-family: Helvetica, sans-serif;
+  color: #383a3f;
   overflow: hidden;
   height: 35px;
   padding-top: 4px;
@@ -261,8 +281,8 @@ body {
   margin-top: 15px;
 }
 .app_nav .app_nav_form_wrapper .form .form_button_wrapper button {
-  font-family: Arial, Helvetica, sans-serif;
-  color: #39404D;
+  font-family: Helvetica, sans-serif;
+  color: #383a3f;
   font-weight: 700;
   font-size: 22px;
   border: none;
@@ -270,7 +290,7 @@ body {
 .app_nav .app_nav_form_wrapper .form .form_button_wrapper .form_submit_button {
   width: 70%;
   height: 60px;
-  color: #39404D;
+  color: #383a3f;
   background-color: #FCD964;
 }
 .app_nav .app_nav_form_wrapper .form .form_button_wrapper .form_close_button {
@@ -314,8 +334,8 @@ body {
 .app_nav .app_nav_form_wrapper .edit_card .edit_nav_wrapper .edit_title_wrapper {
   display: flex;
   flex-direction: row;
-  font-family: Arial, Helvetica, sans-serif;
-  color: #39404D;
+  font-family: Helvetica, sans-serif;
+  color: #383a3f;
   width: 74%;
   padding: 15px 20px 0px 20px;
   text-align: center;
@@ -326,7 +346,7 @@ body {
   margin: 0 3px 0 0;
   font-size: 24px;
   font-weight: 700;
-  color: #39404D;
+  color: #383a3f;
 }
 .app_nav .app_nav_form_wrapper .edit_card .edit_nav_wrapper .edit_title_wrapper .edit_title_entity_num {
   margin: 0 20px 0 0;
@@ -409,14 +429,14 @@ body {
   margin: 0;
 }
 .app_nav .app_nav_form_wrapper .edit_card .edit_content_wrapper .edit_content .edit_text_title {
-  font-family: Arial, Helvetica, sans-serif;
-  color: #39404D;
+  font-family: Helvetica, sans-serif;
+  color: #383a3f;
   font-weight: 700;
   font-size: 14px;
 }
 .app_nav .app_nav_form_wrapper .edit_card .edit_content_wrapper .edit_content .edit_text_value {
-  font-family: Arial, Helvetica, sans-serif;
-  color: #39404D;
+  font-family: Helvetica, sans-serif;
+  color: #383a3f;
   position: relative;
   left: 80%;
   top: 4px;
@@ -432,7 +452,7 @@ body {
 }
 .app_nav .app_nav_form_wrapper .edit_card .edit_content_wrapper .edit_content .edit_text_value .edit_original_hp_size {
   font-size: 24px !important;
-  color: #39404D;
+  color: #383a3f;
 }
 .app_nav .app_nav_form_wrapper .edit_card .edit_content_wrapper .edit_content .edit_current_hp {
   color: #FF0202 !important;
@@ -468,8 +488,8 @@ body {
 }
 .app_nav .app_nav_form_wrapper .edit_card .edit_content_wrapper .edit_content .edit_error_wrapper {
   display: block;
-  font-family: Arial, Helvetica, sans-serif;
-  color: #39404D;
+  font-family: Helvetica, sans-serif;
+  color: #383a3f;
   position: relative;
   left: 5px;
   top: 22px;
@@ -486,8 +506,8 @@ body {
   height: 60px;
 }
 .app_nav .app_nav_form_wrapper .edit_card .edit_submit_wrapper .edit_button {
-  font-family: Arial, Helvetica, sans-serif;
-  color: #39404D;
+  font-family: Helvetica, sans-serif;
+  color: #383a3f;
   background-color: #EBC43D;
   border: none;
   width: 100%;
@@ -498,7 +518,7 @@ body {
 .app_nav .app_nav_form_wrapper .edit_card .edit_submit_wrapper .edit_button:nth-child(1) {
   background-color: #EBC43D;
   width: 70%;
-  color: #39404D;
+  color: #383a3f;
 }
 .app_nav .app_nav_form_wrapper .edit_card .edit_submit_wrapper .edit_button:nth-child(2) {
   background-color: #FF5252;
@@ -514,7 +534,7 @@ body {
   position: fixed;
   left: 50%;
   transform: translateX(-50%);
-  top: 25%;
+  top: 200px;
   overflow-y: scroll;
   box-sizing: content-box;
 }
@@ -528,14 +548,14 @@ body {
   width: 295px;
   gap: 40px 15px;
   position: fixed;
-  top: 10%;
+  top: 12%;
 }
 .app_inner_card_container .app_inner_card_container_center_wrapper p {
   margin: 0;
 }
 .app_inner_card_container .app_inner_card_container_center_wrapper .card {
-  font-family: Arial, Helvetica, sans-serif;
-  color: #39404D;
+  font-family: Helvetica, sans-serif;
+  color: #383a3f;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -580,7 +600,7 @@ body {
   font-weight: 600;
 }
 .app_inner_card_container .app_inner_card_container_center_wrapper .card .card_text_name_wrapper .card_text_namex {
-  color: #39404D;
+  color: #383a3f;
 }
 .app_inner_card_container .app_inner_card_container_center_wrapper .card .card_text_name_wrapper .card_text_unique_id {
   padding-left: 5px;
