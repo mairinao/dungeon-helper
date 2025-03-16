@@ -114,6 +114,7 @@ document.querySelector('#edit_card').addEventListener('submit', function (event)
         hpElement.textContent = hpChange ? newHp : currentHp;
         initativeElement.textContent = initiativeChange ? newInitiative : currentInitiative;
         toggleRenderForm(event);
+        get_hitpoints();
     }else{
         console.error("Error 2");
     }
