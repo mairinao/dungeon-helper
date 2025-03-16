@@ -563,6 +563,7 @@ body{
     top: 200px;
     overflow-y: scroll;
     box-sizing: content-box;
+    -webkit-overflow-scrolling: touch;
     
     .app_inner_card_container_center_wrapper{
         display: flex;
