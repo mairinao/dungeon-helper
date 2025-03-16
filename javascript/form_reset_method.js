@@ -44,7 +44,10 @@ function resetForm_clear(event){
             console.log("None");
             break;
         case 'clearDead':
-            console.log("Clear Dead");
+            const deadCards = document.querySelectorAll('.dead');
+            Array.from(deadCards).forEach(clearAll =>{
+                clearAll.remove();      
+            }) 
             break;
         case 'clearMarked':
             const selectedCards = document.querySelectorAll('.selected');
@@ -53,7 +56,6 @@ function resetForm_clear(event){
             })       
             break;
         default:
-            console.log("Clear Specific Error");
             break;    
     }
 }

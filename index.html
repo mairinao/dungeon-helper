@@ -3,268 +3,180 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="myStyle.css">
+    <link rel="stylesheet" href="./style/style.css">
     <title>Dungeon Helper</title>
 </head>
 <body>
-    <div class="main-container">
-        <div class="title-wrapper">
-            <h1 class="title">Dungeon</h1>
-            <h1 class="title">Helper</h1>
-        </div>
-        <nav>
-            <button onclick="openForm('formWrapper','newEntityBtn')" id="newEntityBtn" class="nav-button fromLeft">New Entity</button>
-            <button onclick="rollInitiative()" id="initiativeRollBtn" class="nav-button fromLeft">Initiative Roll</button>
-            <button onclick="openForm('resetWrapper')" id="resetBtn" class="nav-button fromLeft">Reset</button>
-        </nav>
-        <div class="content-cards">
-            <div class="card">
-                <button class="card-icon-select character-icon"></button>
-                <div class="card-data-wrapper">
-                    <div class="card-initiative">
-                        <p class="initiative-title">initiative</p>
-                        <p id="initiativeValue" class="initiative-value">19</p>
-                    </div>
-                    <div class="card-name">
-                        <p class="card-title">Soldier</p>
-                        <p id="cardId" class="card-id">#3</p>
-                    </div>
-                    <div class="card-hitpoints">
-                        <div class="hitpoints-bar-wrapper">
-                            <div class="green-bar"></div>
-                            <div class="red-bar"></div>
-                        </div>
-                        <div class="hitpoints-wrapper">
-                            <p class="hitpoints-title">HP</p>
-                            <p id="hitpointsValue" class="hitpoints-value">33/33</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="card">
-                <button class="card-icon-select entity-icon"></button>
-                <div class="card-data-wrapper">
-                    <div class="card-initiative">
-                        <p class="initiative-title">initiative</p>
-                        <p id="initiativeValue" class="initiative-value">19</p>
-                    </div>
-                    <div class="card-name">
-                        <p class="card-title">Soldier</p>
-                        <p id="cardId" class="card-id">#3</p>
-                    </div>
-                    <div class="card-hitpoints">
-                        <div class="hitpoints-bar-wrapper">
-                            <div class="green-bar"></div>
-                            <div class="red-bar"></div>
-                        </div>
-                        <div class="hitpoints-wrapper">
-                            <p class="hitpoints-title">HP</p>
-                            <p id="hitpointsValue" class="hitpoints-value">33/33</p>
-                        </div>
-                    </div>
-                </div>
-                
-            </div>
-            <div class="card">
-                <button class="card-icon-select player-character-icon"></button>
-                <div class="card-data-wrapper">
-                    <div class="card-initiative">
-                        <p class="initiative-title">initiative</p>
-                        <p id="initiativeValue" class="initiative-value">19</p>
-                    </div>
-                    <div class="card-name">
-                        <p class="card-title">Soldier</p>
-                        <p id="cardId" class="card-id">#3</p>
-                    </div>
-                    <div class="card-hitpoints">
-                        <div class="hitpoints-bar-wrapper">
-                            <div class="green-bar"></div>
-                            <div class="red-bar"></div>
-                        </div>
-                        <div class="hitpoints-wrapper">
-                            <p class="hitpoints-title">HP</p>
-                            <p id="hitpointsValue" class="hitpoints-value">33/33</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="card">
-                <button class="card-icon-select entity-icon"></button>
-                <div class="card-data-wrapper">
-                    <div class="card-initiative">
-                        <p class="initiative-title">initiative</p>
-                        <p id="initiativeValue" class="initiative-value">19</p>
-                    </div>
-                    <div class="card-name">
-                        <p class="card-title">Soldier</p>
-                        <p id="cardId" class="card-id">#3</p>
-                    </div>
-                    <div class="card-hitpoints">
-                        <div class="hitpoints-bar-wrapper">
-                            <div class="green-bar"></div>
-                            <div class="red-bar"></div>
-                        </div>
-                        <div class="hitpoints-wrapper">
-                            <p class="hitpoints-title">HP</p>
-                            <p id="hitpointsValue" class="hitpoints-value">33/33</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="card">
-                <button class="card-icon-select character-icon"></button>
-                <div class="card-data-wrapper">
-                    <div class="card-initiative">
-                        <p class="initiative-title">initiative</p>
-                        <p id="initiativeValue" class="initiative-value">19</p>
-                    </div>
-                    <div class="card-name">
-                        <p class="card-title">Soldier</p>
-                        <p id="cardId" class="card-id">#3</p>
-                    </div>
-                    <div class="card-hitpoints">
-                        <div class="hitpoints-bar-wrapper">
-                            <div class="green-bar"></div>
-                            <div class="red-bar"></div>
-                        </div>
-                        <div class="hitpoints-wrapper">
-                            <p class="hitpoints-title">HP</p>
-                            <p id="hitpointsValue" class="hitpoints-value">33/33</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="card">
-                <button class="card-icon-select entity-icon"></button>
-                <div class="card-data-wrapper">
-                    <div class="card-initiative">
-                        <p class="initiative-title">initiative</p>
-                        <p id="initiativeValue" class="initiative-value">19</p>
-                    </div>
-                    <div class="card-name">
-                        <p class="card-title">Soldier</p>
-                        <p id="cardId" class="card-id">#3</p>
-                    </div>
-                    <div class="card-hitpoints">
-                        <div class="hitpoints-bar-wrapper">
-                            <div class="green-bar"></div>
-                            <div class="red-bar"></div>
-                        </div>
-                        <div class="hitpoints-wrapper">
-                            <p class="hitpoints-title">HP</p>
-                            <p id="hitpointsValue" class="hitpoints-value">33/33</p>
-                        </div>
-                    </div>
-                </div>
-                
-            </div>
-            <div class="card">
-                <button class="card-icon-select player-character-icon"></button>
-                <div class="card-data-wrapper">
-                    <div class="card-initiative">
-                        <p class="initiative-title">initiative</p>
-                        <p id="initiativeValue" class="initiative-value">19</p>
-                    </div>
-                    <div class="card-name">
-                        <p class="card-title">Soldier</p>
-                        <p id="cardId" class="card-id">#3</p>
-                    </div>
-                    <div class="card-hitpoints">
-                        <div class="hitpoints-bar-wrapper">
-                            <div class="green-bar"></div>
-                            <div class="red-bar"></div>
-                        </div>
-                        <div class="hitpoints-wrapper">
-                            <p class="hitpoints-title">HP</p>
-                            <p id="hitpointsValue" class="hitpoints-value">33/33</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="card">
-                <button class="card-icon-select entity-icon"></button>
-                <div class="card-data-wrapper">
-                    <div class="card-initiative">
-                        <p class="initiative-title">initiative</p>
-                        <p id="initiativeValue" class="initiative-value">19</p>
-                    </div>
-                    <div class="card-name">
-                        <p class="card-title">Soldier</p>
-                        <p id="cardId" class="card-id">#3</p>
-                    </div>
-                    <div class="card-hitpoints">
-                        <div class="hitpoints-bar-wrapper">
-                            <div class="green-bar"></div>
-                            <div class="red-bar"></div>
-                        </div>
-                        <div class="hitpoints-wrapper">
-                            <p class="hitpoints-title">HP</p>
-                            <p id="hitpointsValue" class="hitpoints-value">33/33</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <form id="formWrapper" class="form-wrapper" novalidate>
-            <div class="form-title">
-                <div class="title">
-                    <h2>Creating a character.</h2>
-                </div>
-                <button formnovalidate onclick="closeForm('formWrapper','newEntityBtn')" class="close-form">
-                    <div class="cross-bar"></div>
-                    <div class="cross-bar"></div>
-                </button>
-            </div>
-            <div class="entity-select-wrapper">
-                <div class="form-type-select">
-                    <label id="formTypeSelect" class="form-radio-label" for="entity-check">
-                        <input onclick="javascript:formSelect()" type="radio" value="entity-check" id="entity-check" name="topic" required/>
-                        <img style="margin-bottom: 9px;"  id="entity-icon" src="./Images/entity-small-form.png" alt="character-icon">
-                        <p id="entityText" class="form-radio-text">Entity</p>
-                    </label>
-                    <label id="formTypeSelect" class="form-radio-label"  for="character-check">
-                        <input  onclick="javascript:formSelect()" type="radio" value="character-check" id="character-check" name="topic"/>
-                        <img style="margin-bottom: 9px;" id="character-icon" src="./Images/character-small-form.png" alt="character-icon">
-                        <p id="characterText"  class="form-radio-text">Character</p>
-                    </label>
-                    <label id="formTypeSelect" class="form-radio-label"  for="player-character-check">
-                        <input  onclick="javascript:formSelect()" type="radio" value="player-character-check" id="player-character-check" name="topic"/>
-                        <img  style="margin-bottom: 4px;" id="playerCharacter-icon" src="./Images/player-character-small-form.png" alt="character-icon">
-                        <p id="pcText"  class="form-radio-text">Player<br> Character</p>
-                    </label>
-                </div>
-            </div>
-            <div class="entity-form-data">
-                <div class="entity-form-data-row">
-                    <div class="entity-name-field input-common">
-                        <label for="entityName">Entity Name</label>
-                        <input type="text" id="entityNameInput" name="entityName" required minlength="1" maxlength="8">
-                    </div>
-                    <div class="entity-auto-id-field input-common">
-                        <label for="autoId">Auto ID</label>
-                        <input type="text" id="autoIdFieldOutput" name="autoId" disabled minlength="1" maxlength="5" placeholder="Auto #">
-                    </div>
-                    <div class="entity-amount-field input-common">
-                        <label for="entityAmount">Number of Entities</label>
-                        <input type="tel" id="entityAmountInput" name="entityAmount" required  maxlength= "2" min= "1" max= "99">
-                    </div>
-                </div>
-                <div class="entity-form-data-row">
-                    <div class="entity-hitpoints-field input-common">
-                        <label for="entityHitpoints">Hit Points</label>
-                        <input type="tel" id="entityHitpointsInput" name="entityHitpoints" required  maxlength= "3" min= "1" max= "999"/>
-                    </div>
-                    <div class="entity-initiative-bonus-field input-common">
-                        <label for="entityInitiativeBonus">Initiative Bonus</label>
-                        <input type="tel" id="entityInitiativeBonus" name="entityInitiativeBonus" required minlength="1" maxlength="2">
-                    </div>
-                </div>
-            </div>
-            <button onclick="submitForm()" class="form-create-button">Create</button>
-        </form>
+    <div  id="overlayWrapper" class="overlay-wrapper">
+        <div class="overlay-grey"></div>
+        <div class="loader"></div>
     </div>
-<script src="createForm.js"></script>
-<script src="rollInitiative.js"></script>
-<script src="reset.js"></script>
+    <div class="app_container">
+        <div class="page_title">
+            <img src="./images/app_title.svg" alt="app title">
+        </div>
+        <div class="app_nav">
+            <div class="app_nav_wrapper_centered">
+                <button class="app_nav_btn nav_create_btn" onclick="formToggle(event)">New Entity</button>
+                <button class="app_nav_btn" onclick="initiativeRoll()">Initiative Roll</button>
+                <button class="app_nav_btn nav_reset_btn" onclick="arrange()">Order</button>
+                <button class="app_nav_btn nav_reset_btn" onclick="formToggle(event)">Reset</button>
+            </div>
+            <div class="app_nav_form_wrapper">
+                <form class="form create_form" id="create_form_id">
+                    <div class="form_title_wrapper">
+                        <p class="form_title_text">Creating a character</p>
+                    </div>
+                    <div class="form_type_select_wrapper">
+                        <input type="radio" id="form_type_entity_radio_id" class="form_type_entity_radio" name="type-select" value="entity">
+                        <label for="form_type_entity_radio_id" class="custom-radio entity_radio_css" onclick="createForm_entityTypeSelection('entity', event)" checked>
+                            <p class="createForm_entity_label">Entity</p>
+                        </label>
+                        <input type="radio" id="form_type_character_radio_id" class="form_type_character_radio" name="type-select" value="character">
+                        <label for="form_type_character_radio_id" class="custom-radio character_radio_css" onclick="createForm_entityTypeSelection('character', event)">
+                            <p class="createForm_character_label">Character</p>
+                        </label>
+                        <input type="radio" id="form_type_playerCharacter_radio_id" class="form_type_playerCharacter_radio" name="type-select" value="playerCharacter">
+                        <label for="form_type_playerCharacter_radio_id" class="custom-radio playerCharacter_radio_css" onclick="createForm_entityTypeSelection('playerCharacter', event)">
+                            <p class="createForm_pc_label">Player Character</p>
+                        </label>
+                    </div>
+                    <div class="form_input_wrapper">
+                        <div class="form_input_wrapper_col1">
+                            <label for="form_input_name label">Name</label><br>
+                            <input type="text" id="form_input_name" name="name"><br>
+                            <div class="form_input_error_wrapper">
+                                <p id="name_error_text_id"></p>
+                            </div>
+                            <label for="form_input_hitpoints label" class="hitpoints_display">Hitpoints</label><br>
+                            <input type="text" id="form_input_hitpoints" class="hitpoints_display" name="hitpoints"><br>
+                            <div class="form_input_error_wrapper hitpoints_display">
+                                <p id="hitpoints_error_text_id"></p>
+                            </div>
+                        </div>
+                        <div class="form_input_wrapper_col2">
+                            <label for="form_input_number_of_entities label" class="entities_display">Number of Entities</label><br>
+                            <div class="form_input_number_of_entities_number_input_wrapper entities_display">
+                                <button class="form_input_number_of_entities_number_input decrement" onclick="inputEntitiesMaths(event)">-</button>
+                                <input type="text" name="entities-quantity" id="form_input_number_of_entities_number_input"><br>
+                                <button class="form_input_number_of_entities_number_input increment" onclick="inputEntitiesMaths(event)">+</button>
+                            </div>
+                            <div class="form_input_error_wrapper entities_display">
+                                <p id="entitiesQuantity_error_text_id"></p>
+                            </div>
+                            <label for="form_input_initiative_bonus label" class="initiative_display">Initiative Bonus</label><br>
+                            <div class="form_input_number_of_entities_number_input_wrapper initiative_display">
+                                <button class="form_input_number_of_entities_number_input decrement" onclick="inputIniativeMaths(event)">-</button>
+                                <input type="text" name="initiative-bonus" id="form_input_number_of_initiative_number_input"><br>
+                                <button class="form_input_number_of_entities_number_input increment" onclick="inputIniativeMaths(event)">+</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form_button_wrapper">
+                        <button class="form_submit_button" id="form_submit_button" onclick="createForm_submit(event)">Create</button>
+                        <button class="form_close_button form_create_close_btn" id="form_close_button" onclick="formToggle(event)">Close</button>
+                    </div>
+                </form>
+                <form class="form reset_form" id="reset_form_id">
+                    <div class="form_title_wrapper">
+                        <p class="form_title_text" onclick="resetForm_toggle(event)">Reset</p>
+                        
+                    </div>
+                    <div class="form_input_wrapper form_input_wrapper_col">
+                        <div class="drop_menu_wrapper">
+                            <label for="clearType">Clear by Type</label>
+                            <select name="clearType" id="clearType">
+                                <option value="none" selected   >-- --</option>
+                                <option value="clearAll">Clear All</option>
+                                <option value="clearEntities">Clear Common Entities</option>
+                                <option value="clearCharacters">Clear NPC Characters</option>
+                                <option value="clearPlayerCharacters">Clear Player Characters</option>
+                            </select> 
+                        </div>
+                        <div class="drop_menu_wrapper">
+                            <label for="clearType">Clear Dead or Marked</label>
+                            <select name="clearSpecific" id="clearSpecific">
+                                <option value="none" selected>-- --</option>
+                                <option value="clearDead">Clear Dead</option>
+                                <option value="clearMarked">Clear Marked</option>
+                            </select> 
+                        </div>
+                    </div>
+                    <div class="form_button_wrapper">
+                        <button class="form_submit_button" id="form_submit_button" onclick="resetForm_clear(event)">Reset</button>
+                        <button class="form_close_button form_reset_close_btn" id="form_close_button" onclick="formToggle(event)">Close</button>
+                    </div>
+                </form>
+                <form class="form edit_card" id="edit_card">
+                    <div class="edit_nav_wrapper">
+                        <div class="edit_title_wrapper" id="edit_wrapper_title">
+                            <p class="edit_title_name">Soldier</p>
+                            <p class="edit_title_entity_num">#33</p>
+                            <p class="edit_title_type">entity</p>
+                        </div>
+                    </div>
+                    <div class="edit_content_wrapper">
+                        <div class="edit_content">
+                            <div class="initiative_col">
+                                <p class="edit_text_title">Initiative</p>
+                                <div class="edit_value_row">
+                                    <p class="edit_text_value edit_initiative_current">21</p>
+                                    <p class="edit_text_value smallInitiative edit_initiative_original">(+1)</p>
+                                </div>
+                            </div>
+                            <div class="initiative_col edit_col">
+                                <div class="edit_input_wrapper">
+                                    <button type="button" class="edit_input_modify_input int_mod_input">-</button>
+                                    <input id="initiative_input_id" value="0">
+                                    <button type="button" class="edit_input_modify_input int_mod_input">+</button>
+                                </div>
+                                <div class="edit_error_wrapper edit_error_message_hidden">
+                                    Number Only.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="edit_content">
+                            <div class="hitpoints_col">
+                                <p class="edit_text_title">Hitpoints</p>
+                                <div class="edit_value_row">
+                                    <p class="edit_text_value edit_hp_current">80</p>
+                                    <p class="edit_text_value edit_hp_original">/99</p>
+                                </div>
+                            </div>
+                            <div class="hitpoints_col edit_col">
+                                <div class="edit_input_wrapper">
+                                    <button type="button" class="edit_input_modify_input hp_mod_input">-</button>
+                                    <input id="hitpoints_input_id" value="0">
+                                    <button type="button" class="edit_input_modify_input hp_mod_input">+</button>
+                                </div>
+                                <div class="edit_error_wrapper edit_error_message_hidden">
+                                    Number Only.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="edit_submit_wrapper">
+                        <button type="submit" class="edit_button submit_button" id="form_submit_button">Update</button>
+                        <button type="button" class="edit_button close_button" id="form_close_button" onclick="toggleRenderForm(event)">Close</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="app_inner_card_container">
+            <div class="app_inner_card_container_center_wrapper" id="app_inner_card_container_center_wrapper_id"></div>
+        </div>
+    </div>
+
+    <script src="./javascript/auto roll_order.js"></script>
+    <script src="./javascript/card_healthbar.js"></script>
+    <script src="./javascript/card_select_toggle.js"></script>
+    <script src="./javascript/form_create_check_submit.js"></script>
+    <script src="./javascript/form_create_dynamic_builder.js"></script>
+    <script src="./javascript/form_create_entities_intiative_logic.js"></script>
+    <script src="./javascript/form_reset_method.js"></script>
+    <script src="./javascript/form_toggle_reset.js"></script>
+    <script src="./javascript/form_update_card.js"></script>
+
+    <script src="./javascript/toybox.js"></script>
 </body>
 </html>

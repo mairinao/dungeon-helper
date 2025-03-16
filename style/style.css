@@ -622,6 +622,7 @@ body {
   top: -5px;
   height: 100%;
   width: 100%;
+  max-width: 100%;
   background-color: #A0ED85;
 }
 .app_inner_card_container .app_inner_card_container_center_wrapper .card .card_hitpoints_wrapper {

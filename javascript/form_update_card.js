@@ -121,10 +121,8 @@ document.querySelector('#edit_card').addEventListener('submit', function (event)
 
 });
 
-function toggleSelected(element, iconUrl, redIconUrl) {
-    const hasSelected = element.classList.toggle('selected');
-    element.style.backgroundImage = hasSelected ? `url(${redIconUrl})` : `url(${iconUrl})`;
-}
+//toggle selected cards
+
 
 function toggleRenderForm(event){
     event.preventDefault();
